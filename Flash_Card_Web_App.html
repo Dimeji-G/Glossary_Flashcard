@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Flashcards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 40px;
+      color: #2d3a4b;
+    }
+    .flashcard {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 350px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0 20px 0;
+      padding: 32px 24px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .flashcard:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+    .controls {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    button {
+      background: #2d3a4b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #38b6ff;
+    }
+    .counter {
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .day-buttons {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      justify-content: center;
+    }
+    .day-btn {
+      background: #2d3a4b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .day-btn:hover {
+      background: #38b6ff;
+    }
+    #forceSyncBtn, #forceLocalBtn {
+      position: fixed;
+      top: 16px;
+      z-index: 1000;
+      background: #38b6ff;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #forceLocalBtn {
+      left: 16px;
+      background: #2d3a4b;
+    }
+    #forceSyncBtn:hover {
+      background: #007acc;
+    }
+    #forceLocalBtn:hover {
+      background: #38b6ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Glossary Flashcards</h1>
+  <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 10px;">
+    <label for="calendar" style="font-size: 1rem; color: #2d3a4b; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
+    <input type="date" id="calendar" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+    <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
+  </div>
+  <div class="day-buttons">
+    <button class="day-btn" data-day="monday">Monday</button>
+    <button class="day-btn" data-day="tuesday">Tuesday</button>
+    <button class="day-btn" data-day="wednesday">Wednesday</button>
+    <button class="day-btn" data-day="thursday">Thursday</button>
+    <button class="day-btn" data-day="friday">Friday</button>
+    <button class="day-btn" data-day="saturday">Saturday</button>
+    <button class="day-btn" data-day="sunday">Sunday</button>
+  </div>
+  <div class="counter" id="counter"></div>
+  <div class="flashcard" id="flashcard">Loading...</div>
+  <div class="controls">
+    <button id="prevBtn">Previous</button>
+    <button id="flipBtn">Flip</button>
+    <button id="nextBtn">Next</button>
+  </div>
+  <button id="forceSyncBtn" style="position: fixed; top: 16px; right: 16px; z-index: 1000; background: #38b6ff; color: #fff; font-weight: bold;">Sync Online</button>
+  <button id="forceLocalBtn" style="position: fixed; top: 16px; left: 16px; z-index: 1000; background: #2d3a4b; color: #fff; font-weight: bold;">Use Local</button>
+  <script>
+    // Download and update the CSV file from GitHub raw link, with 10s timeout fallback to local
+    function downloadAndUpdateCSV() {
+      const url = 'https://raw.githubusercontent.com/Dimeji-G/glossary-csv/main/glossary_words_py.csv';
+      let didTimeout = false;
+      const timeout = setTimeout(() => {
+        didTimeout = true;
+        // Try local fallback
+        fetchLocalCSV();
+      }, 10000);
+      fetch(url)
+        .then(response => {
+          if (!response.ok) throw new Error('Network response was not ok');
+          return response.text();
+        })
+        .then(csv => {
+          if (didTimeout) return; // Already loaded local, don't overwrite
+          clearTimeout(timeout);
+          window.latestCSV = csv;
+          parseAndLoadCSV(csv);
+        })
+        .catch(error => {
+          if (!didTimeout) {
+            clearTimeout(timeout);
+            fetchLocalCSV();
+          }
+        });
+    }
+
+    function fetchLocalCSV() {
+      fetch('glossary_words_py.csv')
+        .then(response => {
+          if (!response.ok) throw new Error('Local CSV not found');
+          return response.text();
+        })
+        .then(csv => {
+          window.latestCSV = csv;
+          parseAndLoadCSV(csv);
+          flashcard.textContent = 'Loaded local CSV. Online version unavailable.';
+        })
+        .catch(error => {
+          flashcard.textContent = 'Failed to load both online and local CSV: ' + error;
+        });
+    }
+
+    function parseAndLoadCSV(csv) {
+      // Save the CSV to the user's machine (browser cannot overwrite local server files)
+      // But we can update the in-memory data for the app
+      window.latestCSV = csv;
+
+      // Parse CSV and update app data
+      allCards = parseCSV(csv);
+      // Find min/max week_start
+      minWeekStart = allCards.reduce((min, c) => !min || c.week_start < min ? c.week_start : min, null);
+      maxWeekStart = allCards.reduce((max, c) => !max || c.week_start > max ? c.week_start : max, null);
+      // Default to first week
+      setWeek(minWeekStart);
+    }
+
+    // Helper to parse CSV
+    function parseCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      const headers = lines[0].split(',');
+      return lines.slice(1).map(line => {
+        // Handle quoted fields with commas
+        const values = [];
+        let current = '', inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"') inQuotes = !inQuotes;
+          else if (char === ',' && !inQuotes) { values.push(current); current = ''; }
+          else current += char;
+        }
+        values.push(current);
+        const obj = {};
+        headers.forEach((h, i) => obj[h.trim()] = values[i] ? values[i].trim() : '');
+        return obj;
+      });
+    }
+
+    // Globals
+    let allCards = [];
+    let flashcardsByDay = {};
+    let minWeekStart = null;
+    let maxWeekStart = null;
+    let currentDay = 'monday';
+    let flashcards = [];
+    let current = 0;
+    let showingQuestion = true;
+
+    // UI refs
+    const flashcard = document.getElementById('flashcard');
+    const counter = document.getElementById('counter');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const flipBtn = document.getElementById('flipBtn');
+    const dayBtns = document.querySelectorAll('.day-btn');
+    const calendar = document.getElementById('calendar');
+    const weekIndicator = document.getElementById('week-indicator');
+    const forceSyncBtn = document.getElementById('forceSyncBtn');
+    const forceLocalBtn = document.getElementById('forceLocalBtn');
+
+    // Button handlers for manual source switching
+    forceSyncBtn.onclick = function() {
+      flashcard.textContent = 'Syncing from online...';
+      downloadAndUpdateCSV();
+    };
+    forceLocalBtn.onclick = function() {
+      flashcard.textContent = 'Loading from local file...';
+      fetchLocalCSV();
+    };
+
+    // Replace initial CSV loading with downloadAndUpdateCSV
+    downloadAndUpdateCSV();
+
+    function setWeek(weekStart) {
+      // Filter cards for this week
+      const weekCards = allCards.filter(c => c.week_start === weekStart);
+      if (weekCards.length === 0) return;
+      // Group by day
+      flashcardsByDay = {monday:[],tuesday:[],wednesday:[],thursday:[],friday:[]};
+      weekCards.forEach(c => {
+        if (!flashcardsByDay[c.day]) flashcardsByDay[c.day] = [];
+        flashcardsByDay[c.day].push({question: c.word, answer: c.meaning});
+      });
+      // Accumulate for weekend
+      flashcardsByDay.saturday = [].concat(
+        flashcardsByDay.monday,
+        flashcardsByDay.tuesday,
+        flashcardsByDay.wednesday,
+        flashcardsByDay.thursday,
+        flashcardsByDay.friday
+      );
+      flashcardsByDay.sunday = [...flashcardsByDay.saturday];
+      // Set default day
+      currentDay = 'monday';
+      flashcards = flashcardsByDay[currentDay];
+      current = 0;
+      weekIndicator.textContent = `Showing glossary flashcards for week: ${weekStart}`;
+      updateFlashcard();
+    }
+
+    function updateFlashcard() {
+      showingQuestion = true;
+      if (!flashcards || flashcards.length === 0) {
+        flashcard.textContent = 'No glossary words for this day!';
+        counter.textContent = '';
+      } else {
+        flashcard.textContent = flashcards[current].question;
+        counter.textContent = `Card ${current + 1} of ${flashcards.length}`;
+      }
+    }
+
+    flashcard.onclick = function() {
+      if (!flashcards || flashcards.length === 0) return;
+      showingQuestion = !showingQuestion;
+      flashcard.textContent = showingQuestion ? flashcards[current].question : flashcards[current].answer;
+    };
+    flipBtn.onclick = flashcard.onclick;
+    prevBtn.onclick = function() {
+      if (!flashcards || flashcards.length === 0) return;
+      current = (current - 1 + flashcards.length) % flashcards.length;
+      updateFlashcard();
+    };
+    nextBtn.onclick = function() {
+      if (!flashcards || flashcards.length === 0) return;
+      current = (current + 1) % flashcards.length;
+      updateFlashcard();
+    };
+    dayBtns.forEach(btn => {
+      btn.onclick = function() {
+        currentDay = btn.getAttribute('data-day');
+        flashcards = flashcardsByDay[currentDay] || [];
+        current = 0;
+        updateFlashcard();
+      };
+    });
+
+    // Calendar logic
+    calendar.addEventListener('change', function() {
+      const selectedDate = calendar.value;
+      if (!selectedDate) return;
+      // Find week_start for this date
+      const d = new Date(selectedDate);
+      const day = d.getDay();
+      const monday = new Date(d);
+      monday.setDate(d.getDate() - ((day + 6) % 7));
+      const weekStartStr = monday.toISOString().split('T')[0];
+      if (weekStartStr < minWeekStart) {
+        weekIndicator.textContent = `No data for this week. Earliest available: ${minWeekStart}`;
+        flashcard.textContent = 'Cannot backdate that far!';
+        counter.textContent = '';
+        flashcards = [];
+        return;
+      }
+      if (weekStartStr > maxWeekStart) {
+        weekIndicator.textContent = `No data for this week. Latest available: ${maxWeekStart}`;
+        flashcard.textContent = 'This day is in the future. No words yet!';
+        counter.textContent = '';
+        flashcards = [];
+        return;
+      }
+      if (weekStartStr > maxWeekStart) {
+        weekIndicator.textContent = `No data for this week. Latest available: ${maxWeekStart}`;
+        flashcard.textContent = 'Selected week is in the future!';
+        counter.textContent = '';
+        flashcards = [];
+        return;
+      }
+      setWeek(weekStartStr);
+    });
+  </script>
+</body>
+</html>
