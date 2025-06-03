@@ -1,20 +1,521 @@
-1,vigilance,more careful attention,monday,2025-05-05,2025-05-05
-2,ostensibly,apparently or purportedly,monday,2025-05-05,2025-05-05
-3,elegance,quality of being graceful and attractive in appearance,monday,2025-05-05,2025-05-05
-4,trudge,to walk slowly with a lot of effort,monday,2025-05-05,2025-05-05
-5,marginalize,"treat as not important, as insignificant",monday,2025-05-05,2025-05-05
-6,elaborate,a complicated setup,monday,2025-05-05,2025-05-05
-7,folly,the fact of being stupid,monday,2025-05-05,2025-05-05
-8,celibacy,abstainance from sexual intercourse,monday,2025-05-05,2025-05-05
-9,ostensible,"stated or appearing to be true, but not necessarily so",monday,2025-05-05,2025-05-05
-10,nay,to introduce a second wordto emphaize more on it,monday,2025-05-05,2025-05-05
-11,aesthetics,study of the principle of art and of beauty,monday,2025-05-05,2025-05-05
-12,stodgy,dull and uninspired,monday,2025-05-05,2025-05-05
-13,retinue,"a group of advisers, assitants or an aristocrat escort",monday,2025-05-05,2025-05-05
-14,inconspicuous,"not easily or quickly noticed or seen, nuance",monday,2025-05-05,2025-05-05
-15,prig,a self-righteously moralistic person who behaves better than others,monday,2025-05-05,2025-05-05
-16,plagiarize,to use another persons works and pretend its yours,monday,2025-05-05,2025-05-05
-17,prestigious,"inspiring respect and admiration, having high status",monday,2025-05-05,2025-05-05
-18,incredulity,the state of being unwilling to believe something,monday,2025-05-05,2025-05-05
-19,unfathomable,"impossible to understand, enigma, unscrutable",monday,2025-05-05,2025-05-05
-20,adept,having a natural ability to do something that needs skills,monday,2025-05-05,2025-05-05
+id,word,meaning,day,week_start,date_sent
+1,sullen,angry or unwilling to smile to people,monday,2025-05-05,2025-05-05
+2,beget,father or sire a child,monday,2025-05-05,2025-05-05
+3,parody,to copy the style of someone else but in a humourous way,monday,2025-05-05,2025-05-05
+4,malady,a disease,monday,2025-05-05,2025-05-05
+5,epiphany,a moment of sudden realization of something important to you,monday,2025-05-05,2025-05-05
+6,visceral,based on deep feeling and emotional reactions rather than on reason or thoughts,monday,2025-05-05,2025-05-05
+7,patent,to get official right to divest or make an invention,monday,2025-05-05,2025-05-05
+8,meager,lacking in quantity or quality,monday,2025-05-05,2025-05-05
+9,staunchly,very loyal and commited manner,monday,2025-05-05,2025-05-05
+10,sparingly,in small amounts,monday,2025-05-05,2025-05-05
+11,rudimentary,"immature, only basic and not deep or detailed",monday,2025-05-05,2025-05-05
+12,inconsequential,not important or significant,monday,2025-05-05,2025-05-05
+13,veto,to refuse to allow something to be done,monday,2025-05-05,2025-05-05
+14,Wabi-sabi,find beauty in imprefection,monday,2025-05-05,2025-05-05
+15,Proteus,sheer,monday,2025-05-05,2025-05-05
+16,milieu,a person's social environment,monday,2025-05-05,2025-05-05
+17,sentiment,"refers to a view, opinion or feeling about something",monday,2025-05-05,2025-05-05
+18,definitive,not able to be changed or improved,monday,2025-05-05,2025-05-05
+19,belligerently,hostile and aggressive,monday,2025-05-05,2025-05-05
+20,Diplomatic,"The art of dealing with people in a sensitive and effective way, often involving negotiation and tact",monday,2025-05-05,2025-05-05
+21,indelible,making marks that cannot be removed,tuesday,2025-05-05,2025-05-06
+22,vaunt,to speak proudly about or praise something,tuesday,2025-05-05,2025-05-06
+23,requisite,made necessary,tuesday,2025-05-05,2025-05-06
+24,conflate,to combine two or more things into one,tuesday,2025-05-05,2025-05-06
+25,perfidious,"unable to be trusted, showing no loyalty",tuesday,2025-05-05,2025-05-06
+26,subterfuge,deceipt used in order to acheive one's goal,tuesday,2025-05-05,2025-05-06
+27,taciturn,tending not to speak much,tuesday,2025-05-05,2025-05-06
+28,epitome,a person or thing who serves a perfect example of a quality,tuesday,2025-05-05,2025-05-06
+29,lavish,spending something in generous or extravagant quantities,tuesday,2025-05-05,2025-05-06
+30,valor,great courage,tuesday,2025-05-05,2025-05-06
+31,abuzz,filled with a continuous humming sound,tuesday,2025-05-05,2025-05-06
+32,gregarious,wanting to be with other people,tuesday,2025-05-05,2025-05-06
+33,pseudo,"not genuine, spurious or sham",tuesday,2025-05-05,2025-05-06
+34,beget,father or sire a child,tuesday,2025-05-05,2025-05-06
+35,voluptuousness,"quality of being soft, curved and sexually attractive",tuesday,2025-05-05,2025-05-06
+36,arduous,involving or requiring strenuous effort,tuesday,2025-05-05,2025-05-06
+37,erratic,"not even or according to pattern, unpredictable",tuesday,2025-05-05,2025-05-06
+38,recourse,a way of dealing with a difficult or unpleasant situation,tuesday,2025-05-05,2025-05-06
+39,vanity,the fact that you are too interested in your appearance or achievements,tuesday,2025-05-05,2025-05-06
+40,concession,something given up inorder for a successful detante,tuesday,2025-05-05,2025-05-06
+41,incapacitated,"deprived of strength or power, debilitated,render them inactive to do the normal;",wednesday,2025-05-05,2025-05-07
+42,invaluable,"extremely useful, indispensable",wednesday,2025-05-05,2025-05-07
+43,disgruntled,angry or dissatisfied,wednesday,2025-05-05,2025-05-07
+44,avid,having or showing a keen interest in something,wednesday,2025-05-05,2025-05-07
+45,guild,a group of people with the same interest or profession,wednesday,2025-05-05,2025-05-07
+46,enmity,a feeling of hate,wednesday,2025-05-05,2025-05-07
+47,lynch,for a mob to kill someone for being guilty but found innocent under legal trials,wednesday,2025-05-05,2025-05-07
+48,allusion,something said that is not intended for you to think of a particular object,wednesday,2025-05-05,2025-05-07
+49,Languish,failing to make progress,wednesday,2025-05-05,2025-05-07
+50,lampoon,to criticize a famous person,wednesday,2025-05-05,2025-05-07
+51,protude,extend beyond or above a surface,wednesday,2025-05-05,2025-05-07
+52,vaunt,to speak proudly about or praise something,wednesday,2025-05-05,2025-05-07
+53,trot,run at a moderate pace,wednesday,2025-05-05,2025-05-07
+54,regaling,"entertain, lavishly supplying with food and drinks",wednesday,2025-05-05,2025-05-07
+55,beguile,"to persuade, convince someone in order to deceive them",wednesday,2025-05-05,2025-05-07
+56,lull,"to cause someone to feel calm, allay a maelstrom",wednesday,2025-05-05,2025-05-07
+57,resolute,"admiring, purposeful",wednesday,2025-05-05,2025-05-07
+58,congeal,change,wednesday,2025-05-05,2025-05-07
+59,gall,"bold, impudent behavior",wednesday,2025-05-05,2025-05-07
+60,lingerie,lasting for a long time or slow to end,wednesday,2025-05-05,2025-05-07
+61,vague,"not clearly known, expressed or described, nuance, inconspicuous",thursday,2025-05-05,2025-05-08
+62,effusive,showing or expressing gratitude,thursday,2025-05-05,2025-05-08
+63,placate,make someone less angry,thursday,2025-05-05,2025-05-08
+64,poised,having a composed and self-assured manner,thursday,2025-05-05,2025-05-08
+65,dire,extremely serious,thursday,2025-05-05,2025-05-08
+66,reef,a hazardous obstruction,thursday,2025-05-05,2025-05-08
+67,mirage,something that seems to be far away but doesn't really exist,thursday,2025-05-05,2025-05-08
+68,monumental,very big,thursday,2025-05-05,2025-05-08
+69,subpoena,a writ ordered to summon one to court,thursday,2025-05-05,2025-05-08
+70,dread,apprehension or fear,thursday,2025-05-05,2025-05-08
+71,snag,an unexpected or hidden obstacle or drawback,thursday,2025-05-05,2025-05-08
+72,sparseness,the act of being small in number,thursday,2025-05-05,2025-05-08
+73,Uncanny,strange or mysterious,thursday,2025-05-05,2025-05-08
+74,lucrative,highly profitable,thursday,2025-05-05,2025-05-08
+75,veer,change direction suddenly,thursday,2025-05-05,2025-05-08
+76,assuage;,to make unpleasant feelings strong,thursday,2025-05-05,2025-05-08
+77,Shinrin-yoku,"forest bath, spend more time with nature",thursday,2025-05-05,2025-05-08
+78,humdrum,"lacking excitement, boringly monotonous",thursday,2025-05-05,2025-05-08
+79,jugular,relating to the throat or neck,thursday,2025-05-05,2025-05-08
+80,recess,a period of time whereby something is stopped temporarily,thursday,2025-05-05,2025-05-08
+81,caricature,mimicking someone by exaggerating their characteristics to create a grotesque effect,friday,2025-05-05,2025-05-09
+82,epitome,a person or thing who serves a perfect example of a quality,friday,2025-05-05,2025-05-09
+83,resolute,"admiring, purposeful",friday,2025-05-05,2025-05-09
+84,ludicruous,"so foolish, unreasonable",friday,2025-05-05,2025-05-09
+85,permeate,spread throughout,friday,2025-05-05,2025-05-09
+86,mired,stuck or entangled in something,friday,2025-05-05,2025-05-09
+87,grandeur,"the quality of being large, beautiful or special",friday,2025-05-05,2025-05-09
+88,piquant,exciting and interesting due to it being a mystery,friday,2025-05-05,2025-05-09
+89,penitentiary,a prison for people convicted of serious crimes,friday,2025-05-05,2025-05-09
+90,faculty,an Inherent physical or mental power,friday,2025-05-05,2025-05-09
+91,ambiguous,having or expressing more than one meaning,friday,2025-05-05,2025-05-09
+92,impish,inclined to do slightly naughty things for fun,friday,2025-05-05,2025-05-09
+93,litigation,process of taking a matter to court so it can be fixed,friday,2025-05-05,2025-05-09
+94,condottiere,leader of a group of mercenaries,friday,2025-05-05,2025-05-09
+95,regally,in a way that is very special and suitable for a king or queen,friday,2025-05-05,2025-05-09
+96,panaroma,an unbroken view of the whole region surrounding,friday,2025-05-05,2025-05-09
+97,conceive,imagine something,friday,2025-05-05,2025-05-09
+98,sangfroid,ability to stay calm in a dangerous situation,friday,2025-05-05,2025-05-09
+99,vanguard,the part of the army that leads an attack on an enemy,friday,2025-05-05,2025-05-09
+100,aristocracy,the highest class in certain societies,friday,2025-05-05,2025-05-09
+101,obscure,to prevent something from being seen or sent or not known to many people,monday,2025-05-12,2025-05-12
+102,dexterity,able to use your hands skillfully,monday,2025-05-12,2025-05-12
+103,valor,great courage,monday,2025-05-12,2025-05-12
+104,bludgeon,to hit someone hard and repeatedly with a heavy weapon,monday,2025-05-12,2025-05-12
+105,sordid,involving immoral or dishonorable actions and motive,monday,2025-05-12,2025-05-12
+106,astride,a leg on each side like a bicycle or extending across or spanning something,monday,2025-05-12,2025-05-12
+107,meander,"to follow an intricate course, wander aimlessly without urgent destination",monday,2025-05-12,2025-05-12
+108,bizarre,"very strange or unusual, peculiar",monday,2025-05-12,2025-05-12
+109,vassal,agree to fight for someone in exchange for money or value,monday,2025-05-12,2025-05-12
+110,nuance,"a quality of something that may not be easy to identify, inconspicuous",monday,2025-05-12,2025-05-12
+111,accentuate,make more noticable or prominent,monday,2025-05-12,2025-05-12
+112,tedious,"too long, slow or dull",monday,2025-05-12,2025-05-12
+113,bestow,to give something out as an honor,monday,2025-05-12,2025-05-12
+114,pyrrhic,"a victory that's not worth winning, cause you've lost so much in winning it",monday,2025-05-12,2025-05-12
+115,extol,praise enthusiastically,monday,2025-05-12,2025-05-12
+116,euphoria,"extreme happiness, more than the occasion demands",monday,2025-05-12,2025-05-12
+117,invariably,always,monday,2025-05-12,2025-05-12
+118,trot,run at a moderate pace,monday,2025-05-12,2025-05-12
+119,skeptical,not easily convinced,monday,2025-05-12,2025-05-12
+120,tenacious,"holding tightly onto something, or keeping an opinion in a determined way",monday,2025-05-12,2025-05-12
+121,posthumously,after one's death,tuesday,2025-05-12,2025-05-13
+122,pre-eminent,surpassing all others,tuesday,2025-05-12,2025-05-13
+123,contemporary,someone living within the same period of time,tuesday,2025-05-12,2025-05-13
+124,assiduous,showing great care and perseverance,tuesday,2025-05-12,2025-05-13
+125,foment,to cause trouble to develop,tuesday,2025-05-12,2025-05-13
+126,passe,"no longer fashionable, out of date",tuesday,2025-05-12,2025-05-13
+127,eloquent,"giving a clear, strong message",tuesday,2025-05-12,2025-05-13
+128,revitalized,"given new life, energy or strength, rejuvenated",tuesday,2025-05-12,2025-05-13
+129,Scylla and Charybdis,to be caught between two equally unpleasant alternatives,tuesday,2025-05-12,2025-05-13
+130,folly,the fact of being stupid,tuesday,2025-05-12,2025-05-13
+131,culminate,reach a climax or point of highest development,tuesday,2025-05-12,2025-05-13
+132,fallible,capable of making mistakes or being wrong,tuesday,2025-05-12,2025-05-13
+133,fleece,obtain a great sum of money from a person by dishonest means,tuesday,2025-05-12,2025-05-13
+134,feign,pretend to have a particular feeling or problem,tuesday,2025-05-12,2025-05-13
+135,nondescript,"very ordinary, not showing any original or interesting quality, banal",tuesday,2025-05-12,2025-05-13
+136,antipathy,a deep feeling of dislike or aversion,tuesday,2025-05-12,2025-05-13
+137,saunter,"walk in a slow, relaxed way, often in no particular direction",tuesday,2025-05-12,2025-05-13
+138,attributable,caused by,tuesday,2025-05-12,2025-05-13
+139,disavow,denying any responsibility or support for,tuesday,2025-05-12,2025-05-13
+140,Versailles,a royal château in France; symbol of absolute monarchy,tuesday,2025-05-12,2025-05-13
+141,unhinged,"mentally unstable, deranged",wednesday,2025-05-12,2025-05-14
+142,sputter,"series of soft explosive sound or spitting sounds, blow up",wednesday,2025-05-12,2025-05-14
+143,platonic,intimate and affectionate but not sexual,wednesday,2025-05-12,2025-05-14
+144,nonchalance,"a calm behavior that shows you're not interested or you don't care, bland",wednesday,2025-05-12,2025-05-14
+145,Ostracize,to avoid someone intentionally,wednesday,2025-05-12,2025-05-14
+146,sedulous,showing dedication and diligence,wednesday,2025-05-12,2025-05-14
+147,deft,"skillful, clever or quick",wednesday,2025-05-12,2025-05-14
+148,scowl,to look at someone or something with an angry countenance,wednesday,2025-05-12,2025-05-14
+149,superficial,appearing to be true or real until after scrutiny,wednesday,2025-05-12,2025-05-14
+150,teeter,to appear to be about to fall while moving or standing,wednesday,2025-05-12,2025-05-14
+151,lethargic,"lack of energy and enthusiasm, sluggish",wednesday,2025-05-12,2025-05-14
+152,propensity,an inclination or natural tendency to behave in a particular way,wednesday,2025-05-12,2025-05-14
+153,venerate,to respect and honour someone consummately,wednesday,2025-05-12,2025-05-14
+154,alibis,"excuses or reasons, justification or defense to avoid blame or responsibility",wednesday,2025-05-12,2025-05-14
+155,contrived,artificial and difficult to believe,wednesday,2025-05-12,2025-05-14
+156,incessant,continuing without pause or interrupion,wednesday,2025-05-12,2025-05-14
+157,precarious,in a dangerous state because of not being held in place firmly,wednesday,2025-05-12,2025-05-14
+158,primitive,relating to the early age humans living without machines,wednesday,2025-05-12,2025-05-14
+159,pillory,attack or ridicule,wednesday,2025-05-12,2025-05-14
+160,wane,to become weaker in influence or strength,wednesday,2025-05-12,2025-05-14
+161,cohesion,the action or fact of forming a united whole,thursday,2025-05-12,2025-05-15
+162,implausible,difficult to believe,thursday,2025-05-12,2025-05-15
+163,extricate,free someone from a case,thursday,2025-05-12,2025-05-15
+164,peer,to look carefully or with difficulty,thursday,2025-05-12,2025-05-15
+165,snivel,to cry in a way that's weak and not make others feel sympathy for you,thursday,2025-05-12,2025-05-15
+166,impeccable,in accordance with the highest standards,thursday,2025-05-12,2025-05-15
+167,emaciated,very thin and weak,thursday,2025-05-12,2025-05-15
+168,slew,a violent or uncontrollable sliding movement,thursday,2025-05-12,2025-05-15
+169,fleeting,lasting for a very short time,thursday,2025-05-12,2025-05-15
+170,Ikigai,To have a purpose in life,thursday,2025-05-12,2025-05-15
+171,disparate,different in every way,thursday,2025-05-12,2025-05-15
+172,subliminally,affecting someone's mind with them noticing,thursday,2025-05-12,2025-05-15
+173,vantage,A place offering good view point,thursday,2025-05-12,2025-05-15
+174,evocative,bringing strong feelings to mind,thursday,2025-05-12,2025-05-15
+175,requite,return the favor,thursday,2025-05-12,2025-05-15
+176,cantankerous,"bad tempered, argumentative and uncooperative",thursday,2025-05-12,2025-05-15
+177,salvage,to save goods from destruction or try to make a situation better,thursday,2025-05-12,2025-05-15
+178,abolish,to end an activity or custom officially,thursday,2025-05-12,2025-05-15
+179,czar,a person who has a lot of power in a particular activity,thursday,2025-05-12,2025-05-15
+180,mull,to think about deeply and at length ponder,thursday,2025-05-12,2025-05-15
+181,raucous,making or constituting a disturbingly harsh and loud noise,friday,2025-05-12,2025-05-16
+182,plummet,to fall very quickly,friday,2025-05-12,2025-05-16
+183,introspection,scrutiny of one's own mental and emotional processes,friday,2025-05-12,2025-05-16
+184,churn,to move something or mix it,friday,2025-05-12,2025-05-16
+185,profligate,spending money in a way that wastes it and is not wise,friday,2025-05-12,2025-05-16
+186,condescend,to agree to do something not good enough for your social position,friday,2025-05-12,2025-05-16
+187,unsophisticated,"not complicated, not educated",friday,2025-05-12,2025-05-16
+188,ignoble,not honorable in character or purpose,friday,2025-05-12,2025-05-16
+189,probe,to try and discover information people don't want you to know,friday,2025-05-12,2025-05-16
+190,obnoxious,extremely unpleasant,friday,2025-05-12,2025-05-16
+191,meticulous,showing great attention to detail,friday,2025-05-12,2025-05-16
+192,humbug,dishonest talk in order to decieve someone,friday,2025-05-12,2025-05-16
+193,inadvertently,in a way that is not intentional,friday,2025-05-12,2025-05-16
+194,roguish,behaving in a way that is slightly bad or wrong,friday,2025-05-12,2025-05-16
+195,impoverished,very poor,friday,2025-05-12,2025-05-16
+196,whim,a sudden desire or change of mind,friday,2025-05-12,2025-05-16
+197,scrutiny,critical observation or examination,friday,2025-05-12,2025-05-16
+198,sprezzatura,studies nonchalance,friday,2025-05-12,2025-05-16
+199,despondent,"low spirit, loss of hope or courage",friday,2025-05-12,2025-05-16
+200,quintessence,most typical example,friday,2025-05-12,2025-05-16
+201,unassailable,"impossible to doubt, attack or in such a strong position that cannot be defeated",monday,2025-05-19,2025-05-19
+202,ornate,having lots of complicated decorations,monday,2025-05-19,2025-05-19
+203,garrison,a group of soldiers hired to live in a place and defend it,monday,2025-05-19,2025-05-19
+204,fraught,full of unpleasant things such as problems or danger,monday,2025-05-19,2025-05-19
+205,scurry,rush hurriedly,monday,2025-05-19,2025-05-19
+206,coercion,the use of force to persuade someone to do something they rather not do,monday,2025-05-19,2025-05-19
+207,empathy,the ability to understand and share the feelings of others,monday,2025-05-19,2025-05-19
+208,hurl,to throw away something with a lot force,monday,2025-05-19,2025-05-19
+209,ubiquity,the fact of appearing everywhere or being very common,monday,2025-05-19,2025-05-19
+210,infidelity,slutting around,monday,2025-05-19,2025-05-19
+211,divest,to sell something out,monday,2025-05-19,2025-05-19
+212,gnawing,persistently worrying or distressing,monday,2025-05-19,2025-05-19
+213,foible,a strange habit or characteristic that is seen as harmless,monday,2025-05-19,2025-05-19
+214,snob,a person who likes and respects only people of high social class,monday,2025-05-19,2025-05-19
+215,consign,to send something to someone or to put someone in a maelstrom,monday,2025-05-19,2025-05-19
+216,magnanimity,generosity or kindness to an enemy you once defeated,monday,2025-05-19,2025-05-19
+217,derisory,"ridiculously small, insignificance valiue",monday,2025-05-19,2025-05-19
+218,emasculate,to reduce the effectiveness of something,monday,2025-05-19,2025-05-19
+219,impecunious,having very little money,monday,2025-05-19,2025-05-19
+220,malcontent,a person who rebellious and dissatisfied,monday,2025-05-19,2025-05-19
+221,voyeurism,"gaining pleasure from watching someone, especially in sexual scences",tuesday,2025-05-19,2025-05-20
+222,Clairvoyant,a person who claims to have superpowers to predict the future,tuesday,2025-05-19,2025-05-20
+223,monotonous,dull tedious and repitituous,tuesday,2025-05-19,2025-05-20
+224,idyllic,"extremely happy, peaceful or picturesque",tuesday,2025-05-19,2025-05-20
+225,discord,disagreement between two people,tuesday,2025-05-19,2025-05-20
+226,visceral,relating to deep inward feelings rather than illective; emotional or instinctive,tuesday,2025-05-19,2025-05-20
+227,dogmatic,strongly expressing your beliefs as if they were facts,tuesday,2025-05-19,2025-05-20
+228,ingress,the act of entering something,tuesday,2025-05-19,2025-05-20
+229,adversity,a difficult or unpleasing situation,tuesday,2025-05-19,2025-05-20
+230,insinuate,suggest or hint in an indirect and unpleasant way,tuesday,2025-05-19,2025-05-20
+231,paragon,a person or thing regarded as a perfect example of a particular quality,tuesday,2025-05-19,2025-05-20
+232,enthral,to keep someone completely interested,tuesday,2025-05-19,2025-05-20
+233,covetousness,a strong which to have something that belongs to someone else,tuesday,2025-05-19,2025-05-20
+234,nicety,a detail or something that's only obvious after careful thought,tuesday,2025-05-19,2025-05-20
+235,regent,a person who rules for a limited period,tuesday,2025-05-19,2025-05-20
+236,pollyanna,an excessively cheerful or optimistic person,tuesday,2025-05-19,2025-05-20
+237,recourse,a way of dealing with a difficult or unpleasant situation,tuesday,2025-05-19,2025-05-20
+238,transcendental,an idea or experience that cannot be explained ordinary,tuesday,2025-05-19,2025-05-20
+239,ostentatious,"obviously showing your money, possessions or power so as to be noticed and admired",tuesday,2025-05-19,2025-05-20
+240,countenance,a person's face or facial expression; support or approval,tuesday,2025-05-19,2025-05-20
+241,vie,compete eagerly with someone in order to achieve something,wednesday,2025-05-19,2025-05-21
+242,acclimatize,become accustomed to something new or a change,wednesday,2025-05-19,2025-05-21
+243,emissary,a person sent to relay and receive messages for the ruler,wednesday,2025-05-19,2025-05-21
+244,fawn,"to praise someone so much or give them too much attention, obsequious",wednesday,2025-05-19,2025-05-21
+245,pertinent,related to a subject,wednesday,2025-05-19,2025-05-21
+246,unscrupulous,behaving in a way that is dishonest or unfair so as to get what u want,wednesday,2025-05-19,2025-05-21
+247,galoshes,a waterproof shoe cover,wednesday,2025-05-19,2025-05-21
+248,raucous,making or constituting a disturbingly harsh and loud noise,wednesday,2025-05-19,2025-05-21
+249,anarchy,a state of disorder due to no ruler or head,wednesday,2025-05-19,2025-05-21
+250,remonstrated,"to make a forceful protest, expressing strong disapproval or disagreement",wednesday,2025-05-19,2025-05-21
+251,prodigious,"extremely great in ability, amount or strength",wednesday,2025-05-19,2025-05-21
+252,finagle,obtain by dishonest or devious means,wednesday,2025-05-19,2025-05-21
+253,sumptuous,splendid and expensive-looking,wednesday,2025-05-19,2025-05-21
+254,forestall,to stop something from happening by acting first,wednesday,2025-05-19,2025-05-21
+255,pathological,unable to control part of their behaviour,wednesday,2025-05-19,2025-05-21
+256,sheer,"used to emphasize how great, important or powerful a quality or feeling is",wednesday,2025-05-19,2025-05-21
+257,sentinel,"a person employed to guard something, garrison",wednesday,2025-05-19,2025-05-21
+258,interloper,a person who becomes involved in a place or situation where they are not wanted,wednesday,2025-05-19,2025-05-21
+259,tacit,"understood without being expressed directly, indifferent",wednesday,2025-05-19,2025-05-21
+260,commiserate,to sympathize with someone over a bad happening,wednesday,2025-05-19,2025-05-21
+261,repertoire,"a stock or collections of skills, techniques",thursday,2025-05-19,2025-05-22
+262,rescind,"to make a law, agreement or decision not have any legal power",thursday,2025-05-19,2025-05-22
+263,dredging,drawing up,thursday,2025-05-19,2025-05-22
+264,flamboyance,the tendency to attract attention due to one's quality,thursday,2025-05-19,2025-05-22
+265,admonish,to warn or reprimand someone; to advise or urge,thursday,2025-05-19,2025-05-22
+266,mercenary,interested only in the money or possible gains from a situation,thursday,2025-05-19,2025-05-22
+267,clemency,"mercy, lenience",thursday,2025-05-19,2025-05-22
+268,plenitude,abundance,thursday,2025-05-19,2025-05-22
+269,conventional,"banal, in accordance with what is generally done or believed",thursday,2025-05-19,2025-05-22
+270,Miser,someone who has a strong wish to gain money and hates to spend it,thursday,2025-05-19,2025-05-22
+271,controversy,a big argument about something,thursday,2025-05-19,2025-05-22
+272,physiognomy,"the physical appearance of the face, countenance",thursday,2025-05-19,2025-05-22
+273,buoyancy,"quality of being successful and profitable, able to float",thursday,2025-05-19,2025-05-22
+274,scandal,an action that causes public strong disapproval,thursday,2025-05-19,2025-05-22
+275,rile,to make someone angry,thursday,2025-05-19,2025-05-22
+276,inveterate,having a long established habit less prone or unlikely to change,thursday,2025-05-19,2025-05-22
+277,mundane,lacking interest or excitement,thursday,2025-05-19,2025-05-22
+278,dispense,manage without or get rid of,thursday,2025-05-19,2025-05-22
+279,brazenly,"in an obvious way, not trying to conceal it",thursday,2025-05-19,2025-05-22
+280,reinvigorate,give new energy or strength to,thursday,2025-05-19,2025-05-22
+281,portentous,done in a pompously or overly solemn manner so as to impress,friday,2025-05-19,2025-05-23
+282,rhetoric,writing or speech intended to be effective and influence people,friday,2025-05-19,2025-05-23
+283,unctuous,"feign faLse feelings, behaviour or attitude",friday,2025-05-19,2025-05-23
+284,shabby,in poor condition,friday,2025-05-19,2025-05-23
+285,proliferate,"to increase a lot, especially in numbers",friday,2025-05-19,2025-05-23
+286,nunnery,"convent, a building in which nuns live",friday,2025-05-19,2025-05-23
+287,denigrate,"criticize unfairly, regard as nothing",friday,2025-05-19,2025-05-23
+288,au fait,to be familiar with something,friday,2025-05-19,2025-05-23
+289,pliable,easily influenced,friday,2025-05-19,2025-05-23
+290,disparaging,criticizign someone in a way that shows you don't respect or value them,friday,2025-05-19,2025-05-23
+291,fledge,developed,friday,2025-05-19,2025-05-23
+292,pernicious,"having a harmful effect, especially in a subtle way",friday,2025-05-19,2025-05-23
+293,intercede,intervene on behalf of another,friday,2025-05-19,2025-05-23
+294,vicious,deliberately cruel or violent,friday,2025-05-19,2025-05-23
+295,approbation,praise or approval,friday,2025-05-19,2025-05-23
+296,contortion,a twisted or bent condition,friday,2025-05-19,2025-05-23
+297,supple,bending and moving easily,friday,2025-05-19,2025-05-23
+298,enigma,"someone that is mysterious and seems impossible to understand, inscrutable",friday,2025-05-19,2025-05-23
+299,consummate,"compeletely, skilled",friday,2025-05-19,2025-05-23
+300,meander,"roam, rove about",friday,2025-05-19,2025-05-23
+301,ambivalent,having mixed feeling about something or someone,monday,2025-05-26,2025-05-26
+302,insidious,gradually and secretely causing harm,monday,2025-05-26,2025-05-26
+303,austerity,difficult economic condition created by the government,monday,2025-05-26,2025-05-26
+304,aggrandize,"the act of increasing the wealth, prestige, power or scope of something",monday,2025-05-26,2025-05-26
+305,gaiety,"happiness and excitement, giddiness",monday,2025-05-26,2025-05-26
+306,deliberate,long and careful consideration,monday,2025-05-26,2025-05-26
+307,seamless,smooth,monday,2025-05-26,2025-05-26
+308,corporal,of or relating to the body,monday,2025-05-26,2025-05-26
+309,delirium,unable to speak or think clearly due to fever or being unhinged,monday,2025-05-26,2025-05-26
+310,august,having great importance and respect in the society,monday,2025-05-26,2025-05-26
+311,elude,escape from or avoid,monday,2025-05-26,2025-05-26
+312,palatable,pleasant to taste,monday,2025-05-26,2025-05-26
+313,clamor,to make a loud complaint or demand,monday,2025-05-26,2025-05-26
+314,hobnob,to spend time being friendly with someone famous or important,monday,2025-05-26,2025-05-26
+315,Perpetrating,the act of carrying out or committing a harmful action,monday,2025-05-26,2025-05-26
+316,solidarity,unity or agreement of feeling or action among individuals with common interest,monday,2025-05-26,2025-05-26
+317,scruple,a feeling that stops you from doing something because you think it is morally wrong,monday,2025-05-26,2025-05-26
+318,niggling,causing someone slight pain over a long period of time,monday,2025-05-26,2025-05-26
+319,maligned,"to speak about someone spitefully, damaging someone's reputation through harmful statements",monday,2025-05-26,2025-05-26
+320,renaissance,a new growth of activity or interest in something,monday,2025-05-26,2025-05-26
+321,stagnation,not moving,tuesday,2025-05-26,2025-05-27
+322,ploy,a cunning plan to turn a situation to one's advantage,tuesday,2025-05-26,2025-05-27
+323,valiant,showing courage or determination,tuesday,2025-05-26,2025-05-27
+324,bane,a cause of great distress or annoyance,tuesday,2025-05-26,2025-05-27
+325,bequeath,to arrange for money or your property tbe given to someone after your death,tuesday,2025-05-26,2025-05-27
+326,grope,to touch someone's body to gain sexual body,tuesday,2025-05-26,2025-05-27
+327,vie,compete eagerly with someone in order to achieve something,tuesday,2025-05-26,2025-05-27
+328,presumptuous,failing to observe the limit of what is permitted,tuesday,2025-05-26,2025-05-27
+329,wherewithal,money or other means needed for a particular purpose,tuesday,2025-05-26,2025-05-27
+330,precept,a general meant to regulate behaviour or something,tuesday,2025-05-26,2025-05-27
+331,renege,to fail to keep a promise,tuesday,2025-05-26,2025-05-27
+332,emanate,to express a feeling through countenance,tuesday,2025-05-26,2025-05-27
+333,refectory,a large room in a fancy building where meals are eaten,tuesday,2025-05-26,2025-05-27
+334,acquiesce,"accept something reluctantly without protesting, accept unwillingly",tuesday,2025-05-26,2025-05-27
+335,avaricious,showing an extremely strong wish to get money or keep it,tuesday,2025-05-26,2025-05-27
+336,pragmatic,solving problems in a sensible pratical way than theoretical way,tuesday,2025-05-26,2025-05-27
+337,petty,"not important and not worth giving attention to, inconsequential",tuesday,2025-05-26,2025-05-27
+338,capricious,changing mood or behaviour suddenly and unexpectedly,tuesday,2025-05-26,2025-05-27
+339,dissension,disagreement that leads to discord,tuesday,2025-05-26,2025-05-27
+340,chumminess,"initimacy, friendliness",tuesday,2025-05-26,2025-05-27
+341,overweening,showing excessive confidence and pride,wednesday,2025-05-26,2025-05-28
+342,pertain,to be connected with a particular subject,wednesday,2025-05-26,2025-05-28
+343,remonstrate,"make a forcefully reproachful protest, to disagree",wednesday,2025-05-26,2025-05-28
+344,expedition,a group of people sent out with a particular purpose,wednesday,2025-05-26,2025-05-28
+345,inertia,a tendency to do nothing or remain unchanged,wednesday,2025-05-26,2025-05-28
+346,genuflect,to bend one knees or both as a sign of respect,wednesday,2025-05-26,2025-05-28
+347,frugal,"simple, plain and costing little",wednesday,2025-05-26,2025-05-28
+348,thwart,to stop something from happening or someone from doing something,wednesday,2025-05-26,2025-05-28
+349,contigency,a future event with uncertain probability of it happening,wednesday,2025-05-26,2025-05-28
+350,limbic,a place where powerful emotions are being processed,wednesday,2025-05-26,2025-05-28
+351,subvert,to try to destroy or damage something,wednesday,2025-05-26,2025-05-28
+352,bemoan,to complain or express sadness about something,wednesday,2025-05-26,2025-05-28
+353,connive,to plan secretly for something to happen that will be to your advantage,wednesday,2025-05-26,2025-05-28
+354,tic,an idiosyncratic feature of a person's behaviour,wednesday,2025-05-26,2025-05-28
+355,dwindle,"sparse, to become smaller in size",wednesday,2025-05-26,2025-05-28
+356,unmitigated,"absolute, complete and total",wednesday,2025-05-26,2025-05-28
+357,arrant,"complete, utter",wednesday,2025-05-26,2025-05-28
+358,embers,a small piece of burning or glowing coal or wood in a dying fire,wednesday,2025-05-26,2025-05-28
+359,Capone,"gangster, mobster, criminal, person",wednesday,2025-05-26,2025-05-28
+360,tepid,"only slightly warm, showing little enthusiasm",wednesday,2025-05-26,2025-05-28
+361,slog,to work very hard over a long period of time even though its boring,thursday,2025-05-26,2025-05-29
+362,sternness,"being severe, showing disapproval",thursday,2025-05-26,2025-05-29
+363,scoundrel,a dishonest or unscrupulous person,thursday,2025-05-26,2025-05-29
+364,prerogative,something one or some are allowed to have while the others can't,thursday,2025-05-26,2025-05-29
+365,malevolence,the quality of causing or wanting to cause harm or evil,thursday,2025-05-26,2025-05-29
+366,paradigm,a typical example or pattern of something,thursday,2025-05-26,2025-05-29
+367,simmer,"slowly accumulating feelings that can grow strongly and become more serious, accrue",thursday,2025-05-26,2025-05-29
+368,arbiter,a person who settles disputes,thursday,2025-05-26,2025-05-29
+369,bstinate,unreasonably determined,thursday,2025-05-26,2025-05-29
+370,resplendent,having a very beautiful appearance,thursday,2025-05-26,2025-05-29
+371,modus vivendi,an arrangement allowing group of people with different beliefs work together,thursday,2025-05-26,2025-05-29
+372,elaborate,"containing a lot of careful details, explicate",thursday,2025-05-26,2025-05-29
+373,infallible,incapable of making mistakes or being wrong; always correct and reliable,thursday,2025-05-26,2025-05-29
+374,consume,perfect or complete in every way,thursday,2025-05-26,2025-05-29
+375,mutiny,an open rebellion against the proper authorities,thursday,2025-05-26,2025-05-29
+376,ignoramus,an ignorant or stupid person,thursday,2025-05-26,2025-05-29
+377,succour,give assistance or aid to,thursday,2025-05-26,2025-05-29
+378,excapade,an act involving some danger,thursday,2025-05-26,2025-05-29
+379,guile,clever but dishonest method to deceive someone,thursday,2025-05-26,2025-05-29
+380,condescension,outward display making you think you are more important than others,thursday,2025-05-26,2025-05-29
+381,reform,to make an improvement,friday,2025-05-26,2025-05-30
+382,pervade,noticably spread throughout,friday,2025-05-26,2025-05-30
+383,coarse,rough and not smooth,friday,2025-05-26,2025-05-30
+384,whittle,remold something by cutting of little pieces of the object,friday,2025-05-26,2025-05-30
+385,ingratiate,to try to get someone's approval by doing or saying things that will please them,friday,2025-05-26,2025-05-30
+386,siphon,gradually or stealthily taking something away,friday,2025-05-26,2025-05-30
+387,lascivious,expressing a strong desire for sexual ability,friday,2025-05-26,2025-05-30
+388,rube,naive and inexperienced,friday,2025-05-26,2025-05-30
+389,don,to put on,friday,2025-05-26,2025-05-30
+390,gimmick,a trick or device intended to attract intention,friday,2025-05-26,2025-05-30
+391,tirade,"a long, angry speech of criticism or accusation",friday,2025-05-26,2025-05-30
+392,codify,"arrange into a systematic code, inherent into one's life",friday,2025-05-26,2025-05-30
+393,galore,in abundance,friday,2025-05-26,2025-05-30
+394,petulance,the quality of being easily annoyed,friday,2025-05-26,2025-05-30
+395,machiavellian,"cunning, scheming to ruse, unscrupulous",friday,2025-05-26,2025-05-30
+396,dote,Love someone completely and believe they're perfect,friday,2025-05-26,2025-05-30
+397,delegate,a person sent to represent another,friday,2025-05-26,2025-05-30
+398,tenet,a principle or belief,friday,2025-05-26,2025-05-30
+399,cajole,persuade someone to do something by sustained coaxing,friday,2025-05-26,2025-05-30
+400,repertoire,"a stock or collections of skills, techniques",friday,2025-05-26,2025-05-30
+401,squelch,suppress,monday,2025-06-02,2025-06-02
+402,lechery,show a strong sexual interest in someonemostly done by men,monday,2025-06-02,2025-06-02
+403,ostinato rigore,relentless rigor,monday,2025-06-02,2025-06-02
+404,resonance,when an idea synchroinzes without our experiences and believes,monday,2025-06-02,2025-06-02
+405,egress,the act of leaving a place,monday,2025-06-02,2025-06-02
+406,dissimulation,concealment of one's thought,monday,2025-06-02,2025-06-02
+407,outright,completely or immediately,monday,2025-06-02,2025-06-02
+408,prate,talk foolishly or at tedious length about something,monday,2025-06-02,2025-06-02
+409,peculiar,unusual and strange,monday,2025-06-02,2025-06-02
+410,innocuous,not harmful or hurtful,monday,2025-06-02,2025-06-02
+411,deteriorate,become progressively worse,monday,2025-06-02,2025-06-02
+412,pique,feeling resentful and irritated,monday,2025-06-02,2025-06-02
+413,compulsive,relating to an irresistable urge,monday,2025-06-02,2025-06-02
+414,anecdote,a short amusing story about a real incident or person,monday,2025-06-02,2025-06-02
+415,run amok,behave uncontrollably and disruptively,monday,2025-06-02,2025-06-02
+416,obscurity,the state of being completely alone,monday,2025-06-02,2025-06-02
+417,foist,impose an unnecessary or unwelcoming shit on someone,monday,2025-06-02,2025-06-02
+418,scoff,speak to someone or about something in a scornful or derisive or a mocking way,monday,2025-06-02,2025-06-02
+419,caress,touch or stroke gently or lovingly,monday,2025-06-02,2025-06-02
+420,servility,an excessive willingness to serve,monday,2025-06-02,2025-06-02
+421,paucity,insufficient,tuesday,2025-06-02,2025-06-03
+422,infantry,the part of an army that fights by foot,tuesday,2025-06-02,2025-06-03
+423,renown,famous for something,tuesday,2025-06-02,2025-06-03
+424,censure,express serious disapproval of something,tuesday,2025-06-02,2025-06-03
+425,impetuosity,doing something outright neglecting possible outcome,tuesday,2025-06-02,2025-06-03
+426,tranquil,"calm and peaceful and without noise, violence",tuesday,2025-06-02,2025-06-03
+427,insurrection,an organized attempt to take down their government or ruler,tuesday,2025-06-02,2025-06-03
+428,braggart,someone who talks excessively about themselves and their accomplishments,tuesday,2025-06-02,2025-06-03
+429,farce,an event or situation that is absurd,tuesday,2025-06-02,2025-06-03
+430,drivel,Silly nonsense: triviak or senseless talk or ideas,tuesday,2025-06-02,2025-06-03
+431,egregious,outstandingly bad,tuesday,2025-06-02,2025-06-03
+432,brevity,concise and exact use of words in writing or speech,tuesday,2025-06-02,2025-06-03
+433,advocate,to publicly suggest an idea or support a way of doing something,tuesday,2025-06-02,2025-06-03
+434,repast,a meal,tuesday,2025-06-02,2025-06-03
+435,tumultuous,"making a large and confused noise, change or uncertainty",tuesday,2025-06-02,2025-06-03
+436,venture,a new activity that involves risk and uncertainty,tuesday,2025-06-02,2025-06-03
+437,raison d'etre,most important reason for someone or something's existence,tuesday,2025-06-02,2025-06-03
+438,errant,behaving wrongly in some way,tuesday,2025-06-02,2025-06-03
+439,perpetual,never ending or changing,tuesday,2025-06-02,2025-06-03
+440,reproach,expressing disapproval or disappointment,tuesday,2025-06-02,2025-06-03
+441,grandiose,pompous superiority especially pretentious,wednesday,2025-06-02,2025-06-04
+442,complacent,showing smug or uncritical satisfaction with oneself or one's achievements,wednesday,2025-06-02,2025-06-04
+443,relic,"an object, tradition or system from the past that continues to exist",wednesday,2025-06-02,2025-06-04
+444,esteem,respect for a good opinion,wednesday,2025-06-02,2025-06-04
+445,piecemeal,not done according to a plan,wednesday,2025-06-02,2025-06-04
+446,obsequious,too eager to praise or obey someone,wednesday,2025-06-02,2025-06-04
+447,barbarous,extremely cruel or unpleasant,wednesday,2025-06-02,2025-06-04
+448,duress,threats used to force a person to do something,wednesday,2025-06-02,2025-06-04
+449,bulwark,something that protects you during a maelstrom,wednesday,2025-06-02,2025-06-04
+450,trifling,unimportant or trivial,wednesday,2025-06-02,2025-06-04
+451,apt,having a tendency to do something,wednesday,2025-06-02,2025-06-04
+452,malignant,evil in nature or effect,wednesday,2025-06-02,2025-06-04
+453,harangue,an angry and agressive speech,wednesday,2025-06-02,2025-06-04
+454,impious,showing a lack of respect for God or Religion,wednesday,2025-06-02,2025-06-04
+455,improbable,not likely to happen or be true,wednesday,2025-06-02,2025-06-04
+456,posterity,the people who will exist in the future,wednesday,2025-06-02,2025-06-04
+457,primitive,relating to the early age humans living without machines,wednesday,2025-06-02,2025-06-04
+458,bolster,to improve something or make it stronger,wednesday,2025-06-02,2025-06-04
+459,inundate,overwhelm with things or people to be dealth with,wednesday,2025-06-02,2025-06-04
+460,existing,"as a basic part of something, inherent",wednesday,2025-06-02,2025-06-04
+461,aide,a person who assists a superior in carrying out their duties,thursday,2025-06-02,2025-06-05
+462,Mmount,equivalent in serious to,thursday,2025-06-02,2025-06-05
+463,parsimonious,very unwilling to spend money or use resources,thursday,2025-06-02,2025-06-05
+464,pomp,vain and ostentatious display,thursday,2025-06-02,2025-06-05
+465,discrepancy,a difference between two things that should be the same,thursday,2025-06-02,2025-06-05
+466,overt,"done or shown openly, plainly transparent",thursday,2025-06-02,2025-06-05
+467,sobriety,state of being sober,thursday,2025-06-02,2025-06-05
+468,avow,assert or confess openly,thursday,2025-06-02,2025-06-05
+469,devoid,"entirely lacking, freeform",thursday,2025-06-02,2025-06-05
+470,countenance,approval of something or appearance of someone,thursday,2025-06-02,2025-06-05
+471,idiosyncracy,a behaviour related to a specific individual,thursday,2025-06-02,2025-06-05
+472,perk,an advantage or something extra,thursday,2025-06-02,2025-06-05
+473,wean,to stop from being dependent on something,thursday,2025-06-02,2025-06-05
+474,confer,to exchange ideas on a particular subject in order to reach an agreement,thursday,2025-06-02,2025-06-05
+475,panacea,solution to all problems,thursday,2025-06-02,2025-06-05
+476,bleak,"cold and miserable, gloomy and depressing",thursday,2025-06-02,2025-06-05
+477,charlatan,a person falsely claiming to have a special knowledge or skill,thursday,2025-06-02,2025-06-05
+478,solvent,having enough money to pay back all your debts,thursday,2025-06-02,2025-06-05
+479,timid,shy and nervous,thursday,2025-06-02,2025-06-05
+480,parasol,a light umbrella,thursday,2025-06-02,2025-06-05
+481,prodding,encouraging or urging someone to take action,friday,2025-06-02,2025-06-06
+482,indirection,a way of speaking or writing that avoids clearly mentioning something,friday,2025-06-02,2025-06-06
+483,mesmerize,to have someone attention fully that they can't think of anything else,friday,2025-06-02,2025-06-06
+484,antacid,a substance that neutralizes stomach acidity,friday,2025-06-02,2025-06-06
+485,cohesion,the act of forming a united whole,friday,2025-06-02,2025-06-06
+486,inoculate,becoming immune or build resistant,friday,2025-06-02,2025-06-06
+487,allay,"to cause someone to feel an emotion less, to calm them down",friday,2025-06-02,2025-06-06
+488,benevolence,kindness,friday,2025-06-02,2025-06-06
+489,segacious,showing keen mental discernment and judgement,friday,2025-06-02,2025-06-06
+490,alienated,inducing feeling of isolation,friday,2025-06-02,2025-06-06
+491,reprieve,an official order that delays the punishment,friday,2025-06-02,2025-06-06
+492,arrogant,unpleasantly proud and behaving as if you are more important than others,friday,2025-06-02,2025-06-06
+493,wits,to use one intellect carefully,friday,2025-06-02,2025-06-06
+494,fawn,praise someone too much that it seems fake,friday,2025-06-02,2025-06-06
+495,Gaman,It means to show patience and perseverance when things go hard,friday,2025-06-02,2025-06-06
+496,ferret,an assiduous search for something,friday,2025-06-02,2025-06-06
+497,aversion,a strong dislike or disinclination,friday,2025-06-02,2025-06-06
+498,immoderate,not sensible or restrained,friday,2025-06-02,2025-06-06
+499,abstract,existing in thoughts or as an idea but not having concrete existence,friday,2025-06-02,2025-06-06
+500,intimation,making what you think clear conspicuously,friday,2025-06-02,2025-06-06
+501,vigilance,more careful attention,monday,2025-06-09,2025-06-09
+502,ostensibly,apparently or purportedly,monday,2025-06-09,2025-06-09
+503,elegance,quality of being graceful and attractive in appearance,monday,2025-06-09,2025-06-09
+504,trudge,to walk slowly with a lot of effort,monday,2025-06-09,2025-06-09
+505,marginalize,"treat as not important, as insignificant",monday,2025-06-09,2025-06-09
+506,elaborate,a complicated setup,monday,2025-06-09,2025-06-09
+507,folly,the fact of being stupid,monday,2025-06-09,2025-06-09
+508,celibacy,abstainance from sexual intercourse,monday,2025-06-09,2025-06-09
+509,ostensible,"stated or appearing to be true, but not necessarily so",monday,2025-06-09,2025-06-09
+510,nay,to introduce a second wordto emphaize more on it,monday,2025-06-09,2025-06-09
+511,aesthetics,study of the principle of art and of beauty,monday,2025-06-09,2025-06-09
+512,stodgy,dull and uninspired,monday,2025-06-09,2025-06-09
+513,retinue,"a group of advisers, assitants or an aristocrat escort",monday,2025-06-09,2025-06-09
+514,inconspicuous,"not easily or quickly noticed or seen, nuance",monday,2025-06-09,2025-06-09
+515,prig,a self-righteously moralistic person who behaves better than others,monday,2025-06-09,2025-06-09
+516,plagiarize,to use another persons works and pretend its yours,monday,2025-06-09,2025-06-09
+517,prestigious,"inspiring respect and admiration, having high status",monday,2025-06-09,2025-06-09
+518,incredulity,the state of being unwilling to believe something,monday,2025-06-09,2025-06-09
+519,unfathomable,"impossible to understand, enigma, unscrutable",monday,2025-06-09,2025-06-09
+520,adept,having a natural ability to do something that needs skills,monday,2025-06-09,2025-06-09
