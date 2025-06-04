@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glossary Flashcards</title>
   <style>
-    
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #f5f7fa;
@@ -30,22 +29,19 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 30px 30px 20px 30px;
+      margin: 0px 30px 20px 30px;
       padding: 32px 24px;
       font-size: 1.2rem;
       cursor: pointer;
       transition: box-shadow 0.2s, transform 0.5s cubic-bezier(.4,2,.6,1), background 0.2s;
       transform-style: preserve-3d;
     }
-
     @media screen and (max-width: 429px) {
       .flashcard {
         width: 80%;
-        margin: 20px auto;
+        margin: 0px auto;
         padding: 24px 16px;
       }
-
-      
       .day-buttons {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -57,9 +53,7 @@
         box-sizing: border-box;
         padding: 0 10px;
       }
-      
     }
-
     .flashcard:hover {
       box-shadow: 0 8px 32px rgba(0,0,0,0.16);
     }
@@ -85,7 +79,6 @@
       color: #888;
       margin-bottom: 10px;
     }
-
     @media screen and (min-width: 429px) {
       .day-buttons {
         display: flex;
@@ -95,7 +88,7 @@
         justify-content: center;
         flex-wrap: wrap;
         max-width: 700px;
-        }
+      }
     }
     .day-btn {
       background: #2d3a4b;
@@ -112,20 +105,10 @@
     .day-btn:hover {
       background: #38b6ff;
     }
-    /* Add a faded style for disabled buttons */
     .inactive-btn {
       opacity: 0.5 !important;
       pointer-events: none !important;
     }
-    /* .flashcard-ripple {
-      position: absolute;
-      border-radius: 50%;
-      transform: scale(0);
-      animation: ripple-flashcard 0.5s linear;
-      background: rgba(30,30,60,0.5);
-      pointer-events: none;
-      z-index: 2;
-    } */
     @keyframes ripple-flashcard {
       to {
         transform: scale(4);
@@ -137,7 +120,7 @@
       border-radius: 50%;
       transform: scale(0);
       animation: ripple-day-btn 0.5s linear;
-      background: rgba(30,30,60,0.5); /* Harsh dark color */
+      background: rgba(30,30,60,0.5);
       pointer-events: none;
       z-index: 2;
     }
@@ -170,6 +153,10 @@
     <button class="day-btn" data-day="sunday">Sunday</button>
   </div>
   <div class="counter" id="counter"></div>
+  <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
+    <span id="front-label" style="font-weight: bold; color: #2d3a4b;">Front</span>
+    <span id="back-label" style="font-weight: bold; color: #aaa;">Back</span>
+  </div>
   <div class="flashcard" id="flashcard">Loading...</div>
   <div class="controls">
     <button id="prevBtn">Previous</button>
@@ -177,7 +164,6 @@
     <button id="nextBtn">Next</button>
   </div>
   <script>
-    // Always load the CSV from local file by default
     function loadLocalCSV() {
       fetch('glossary_words_py.csv')
         .then(response => {
@@ -192,7 +178,6 @@
           flashcard.textContent = 'Failed to load local CSV: ' + error;
         });
     }
-
     function getCurrentMondayISO() {
       const now = new Date();
       const day = now.getDay();
@@ -200,27 +185,21 @@
       monday.setDate(now.getDate() - ((day + 6) % 7));
       return monday.toISOString().split('T')[0];
     }
-
     function parseAndLoadCSV(csv) {
       window.latestCSV = csv;
       allCards = parseCSV(csv);
       minWeekStart = allCards.reduce((min, c) => !min || c.week_start < min ? c.week_start : min, null);
       maxWeekStart = allCards.reduce((max, c) => !max || c.week_start > max ? c.week_start : max, null);
-      // Set default week to current week if available, else minWeekStart
       const currentMonday = getCurrentMondayISO();
       const weekExists = allCards.some(c => c.week_start === currentMonday);
       const defaultWeek = weekExists ? currentMonday : minWeekStart;
-      // Set calendar input to today
       calendar.value = new Date().toISOString().split('T')[0];
       setWeek(defaultWeek);
     }
-
-    // Helper to parse CSV
     function parseCSV(text) {
       const lines = text.trim().split(/\r?\n/);
       const headers = lines[0].split(',');
       return lines.slice(1).map(line => {
-        // Handle quoted fields with commas
         const values = [];
         let current = '', inQuotes = false;
         for (let i = 0; i < line.length; i++) {
@@ -235,8 +214,6 @@
         return obj;
       });
     }
-
-    // Globals
     let allCards = [];
     let flashcardsByDay = {};
     let minWeekStart = null;
@@ -245,8 +222,6 @@
     let flashcards = [];
     let current = 0;
     let showingQuestion = true;
-
-    // UI refs
     const flashcard = document.getElementById('flashcard');
     const counter = document.getElementById('counter');
     const prevBtn = document.getElementById('prevBtn');
@@ -255,16 +230,11 @@
     const dayBtns = document.querySelectorAll('.day-btn');
     const calendar = document.getElementById('calendar');
     const weekIndicator = document.getElementById('week-indicator');
-
-    // Replace initial CSV loading with local fetch only
     loadLocalCSV();
-
     function setWeek(weekStart) {
-      // Filter cards for this week
       const weekCards = allCards.filter(c => c.week_start === weekStart);
       const controls = [prevBtn, nextBtn, flipBtn, ...dayBtns];
       if (weekCards.length === 0) {
-        // Disable all controls and fade them if no data
         controls.forEach(btn => { btn.disabled = true; btn.classList.add('inactive-btn'); });
         flashcards = [];
         weekIndicator.textContent = 'No data for this week.';
@@ -273,13 +243,11 @@
       } else {
         controls.forEach(btn => { btn.disabled = false; btn.classList.remove('inactive-btn'); });
       }
-      // Group by day
       flashcardsByDay = {monday:[],tuesday:[],wednesday:[],thursday:[],friday:[]};
       weekCards.forEach(c => {
         if (!flashcardsByDay[c.day]) flashcardsByDay[c.day] = [];
         flashcardsByDay[c.day].push({question: c.word, answer: c.meaning});
       });
-      // Accumulate for weekend
       flashcardsByDay.saturday = [].concat(
         flashcardsByDay.monday,
         flashcardsByDay.tuesday,
@@ -288,28 +256,28 @@
         flashcardsByDay.friday
       );
       flashcardsByDay.sunday = [...flashcardsByDay.saturday];
-      // Set default day
       currentDay = 'monday';
       flashcards = flashcardsByDay[currentDay];
       current = 0;
       weekIndicator.textContent = `Showing glossary flashcards for week: ${weekStart}`;
       updateFlashcard();
     }
-
     function updateFlashcard() {
       showingQuestion = true;
       if (!flashcards || flashcards.length === 0) {
         flashcard.textContent = 'No glossary words for this day!';
         counter.textContent = '';
+        document.getElementById('front-label').style.color = '#2d3a4b';
+        document.getElementById('back-label').style.color = '#aaa';
       } else {
         flashcard.textContent = flashcards[current].question;
         counter.textContent = `Card ${current + 1} of ${flashcards.length}`;
+        document.getElementById('front-label').style.color = '#2d3a4b';
+        document.getElementById('back-label').style.color = '#aaa';
       }
     }
-
     flashcard.onclick = function(e) {
       if (!flashcards || flashcards.length === 0) return;
-      // Ripple effect
       const rect = flashcard.getBoundingClientRect();
       const ripple = document.createElement('span');
       ripple.className = 'flashcard-ripple';
@@ -319,12 +287,13 @@
       ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
       flashcard.appendChild(ripple);
       setTimeout(() => ripple.remove(), 500);
-      // Flip logic with animation
       showingQuestion = !showingQuestion;
       flashcard.classList.toggle('flipped', !showingQuestion);
       setTimeout(() => {
         flashcard.textContent = showingQuestion ? flashcards[current].question : flashcards[current].answer;
-      }, 250); // Change text mid-flip
+        document.getElementById('front-label').style.color = showingQuestion ? '#2d3a4b' : '#aaa';
+        document.getElementById('back-label').style.color = showingQuestion ? '#aaa' : '#2d3a4b';
+      }, 250);
     };
     flipBtn.onclick = flashcard.onclick;
     prevBtn.onclick = function() {
@@ -339,7 +308,6 @@
     };
     dayBtns.forEach(btn => {
       btn.onclick = function(e) {
-        // Ripple effect for day button
         const rect = btn.getBoundingClientRect();
         const ripple = document.createElement('span');
         ripple.className = 'day-btn-ripple';
@@ -349,17 +317,13 @@
         ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
         btn.appendChild(ripple);
         setTimeout(() => ripple.remove(), 500);
-        // ...existing day button logic...
         currentDay = btn.getAttribute('data-day');
         flashcards = flashcardsByDay[currentDay] || [];
         current = 0;
-        // Update calendar to the correct date for the selected day
-        // Find the weekStart date from the weekIndicator
         const weekStartMatch = weekIndicator.textContent.match(/week: (\d{4}-\d{2}-\d{2})/);
         if (weekStartMatch) {
           const weekStartStr = weekStartMatch[1];
           const weekStartDate = new Date(weekStartStr);
-          // Map day string to offset (0=Monday, 1=Tuesday, ... 6=Sunday)
           const dayOffsets = {monday:0, tuesday:1, wednesday:2, thursday:3, friday:4, saturday:5, sunday:6};
           const offset = dayOffsets[currentDay] || 0;
           const newDate = new Date(weekStartDate);
@@ -369,12 +333,9 @@
         updateFlashcard();
       };
     });
-
-    // Calendar logic
     calendar.addEventListener('change', function() {
       const selectedDate = calendar.value;
       if (!selectedDate) return;
-      // Find week_start for this date
       const d = new Date(selectedDate);
       const day = d.getDay();
       const monday = new Date(d);
@@ -398,8 +359,6 @@
       }
       setWeek(weekStartStr);
     });
-
-    // Also disable/fade all controls if weekIndicator says no data (e.g. from calendar logic)
     function disableAllControls() {
       const controls = [prevBtn, nextBtn, flipBtn, ...dayBtns];
       controls.forEach(btn => { btn.disabled = true; btn.classList.add('inactive-btn'); });
