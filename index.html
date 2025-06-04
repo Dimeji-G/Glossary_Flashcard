@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CS Flashcards</title>
   <style>
+    
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: #f5f7fa;
@@ -29,12 +30,36 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 30px 0 20px 0;
+      margin: 30px 30px 20px 30px;
       padding: 32px 24px;
       font-size: 1.2rem;
       cursor: pointer;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.2s, transform 0.5s cubic-bezier(.4,2,.6,1), background 0.2s;
+      transform-style: preserve-3d;
     }
+
+    @media screen and (max-width: 429px) {
+      .flashcard {
+        width: 80%;
+        margin: 20px auto;
+        padding: 24px 16px;
+      }
+
+      
+      .day-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 700px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+      }
+      
+    }
+
     .flashcard:hover {
       box-shadow: 0 8px 32px rgba(0,0,0,0.16);
     }
@@ -60,12 +85,17 @@
       color: #888;
       margin-bottom: 10px;
     }
-    .day-buttons {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      justify-content: center;
+
+    @media screen and (min-width: 429px) {
+      .day-buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 700px;
+        }
     }
     .day-btn {
       background: #2d3a4b;
@@ -76,6 +106,8 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
     }
     .day-btn:hover {
       background: #38b6ff;
@@ -85,11 +117,45 @@
       opacity: 0.5 !important;
       pointer-events: none !important;
     }
+    /* .flashcard-ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple-flashcard 0.5s linear;
+      background: rgba(30,30,60,0.5);
+      pointer-events: none;
+      z-index: 2;
+    } */
+    @keyframes ripple-flashcard {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    .day-btn-ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple-day-btn 0.5s linear;
+      background: rgba(30,30,60,0.5); /* Harsh dark color */
+      pointer-events: none;
+      z-index: 2;
+    }
+    @keyframes ripple-day-btn {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    .flashcard.flipped {
+      transform: rotateY(360deg);
+      transform: rotateX(360deg);
+    }
   </style>
 </head>
 <body>
-  <h1>Glossary Flashcards</h1>
-  <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 10px;">
+  <h1 style="text-align: center;">Glossary Flashcards</h1>
+  <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
     <label for="calendar" style="font-size: 1rem; color: #2d3a4b; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
     <input type="date" id="calendar" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
     <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
@@ -241,10 +307,24 @@
       }
     }
 
-    flashcard.onclick = function() {
+    flashcard.onclick = function(e) {
       if (!flashcards || flashcards.length === 0) return;
+      // Ripple effect
+      const rect = flashcard.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'flashcard-ripple';
+      const size = Math.max(rect.width, rect.height) * 1.2;
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+      flashcard.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 500);
+      // Flip logic with animation
       showingQuestion = !showingQuestion;
-      flashcard.textContent = showingQuestion ? flashcards[current].question : flashcards[current].answer;
+      flashcard.classList.toggle('flipped', !showingQuestion);
+      setTimeout(() => {
+        flashcard.textContent = showingQuestion ? flashcards[current].question : flashcards[current].answer;
+      }, 250); // Change text mid-flip
     };
     flipBtn.onclick = flashcard.onclick;
     prevBtn.onclick = function() {
@@ -258,7 +338,18 @@
       updateFlashcard();
     };
     dayBtns.forEach(btn => {
-      btn.onclick = function() {
+      btn.onclick = function(e) {
+        // Ripple effect for day button
+        const rect = btn.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.className = 'day-btn-ripple';
+        const size = Math.max(rect.width, rect.height) * 1.2;
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = (e.clientX - rect.left - size/2) + 'px';
+        ripple.style.top = (e.clientY - rect.top - size/2) + 'px';
+        btn.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 500);
+        // ...existing day button logic...
         currentDay = btn.getAttribute('data-day');
         flashcards = flashcardsByDay[currentDay] || [];
         current = 0;
