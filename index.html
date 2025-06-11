@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glossary Flashcards</title>
+  <link rel="stylesheet" href="main.css">
   <style>
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f7fa;
       margin: 0;
       padding: 0;
       display: flex;
@@ -15,9 +15,16 @@
       align-items: center;
       min-height: 100vh;
     }
+
+    
+
+    .navbar {
+      position: relative;
+    }
+
     h1 {
       margin-top: 40px;
-      color: #2d3a4b;
+      color: white;
     }
     .flashcard {
       background: #fff;
@@ -36,6 +43,7 @@
       transition: box-shadow 0.2s, transform 0.5s cubic-bezier(.4,2,.6,1), background 0.2s;
       transform-style: preserve-3d;
     }
+    
     @media screen and (max-width: 429px) {
       .flashcard {
         width: 80%;
@@ -53,6 +61,7 @@
         box-sizing: border-box;
         padding: 0 10px;
       }
+
     }
     .flashcard:hover {
       box-shadow: 0 8px 32px rgba(0,0,0,0.16);
@@ -87,7 +96,7 @@
         margin-bottom: 10px;
         justify-content: center;
         flex-wrap: wrap;
-        max-width: 700px;
+        max-width: 400px;
       }
     }
     .day-btn {
@@ -134,35 +143,119 @@
       transform: rotateY(360deg);
       transform: rotateX(360deg);
     }
+
+      .flashcard {
+    color:black
+  }
+
+  @media screen and (min-width: 571px) {
+
+    .entire-body {
+        min-width: 500px;
+        height: 110vh;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 572px) {
+      .entire-body {
+        min-width: 400px;
+        height: 110vh;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 469px) {
+      .entire-body {
+        min-width: 365px;
+        height: 110vh;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 434px) {
+      .entire-body {
+        display: none;
+      }
+    }
   </style>
+
+
 </head>
 <body>
-  <h1 style="text-align: center;">Glossary Flashcards</h1>
-  <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
-    <label for="calendar" style="font-size: 1rem; color: #2d3a4b; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
-    <input type="date" id="calendar" style="padding: 6px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
-    <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
-  </div>
-  <div class="day-buttons">
-    <button class="day-btn" data-day="monday">Monday</button>
-    <button class="day-btn" data-day="tuesday">Tuesday</button>
-    <button class="day-btn" data-day="wednesday">Wednesday</button>
-    <button class="day-btn" data-day="thursday">Thursday</button>
-    <button class="day-btn" data-day="friday">Friday</button>
-    <button class="day-btn" data-day="saturday">Saturday</button>
-    <button class="day-btn" data-day="sunday">Sunday</button>
-  </div>
-  <div class="counter" id="counter"></div>
-  <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
-    <span id="front-label" style="font-weight: bold; color: #2d3a4b;">Front</span>
-    <span id="back-label" style="font-weight: bold; color: #aaa;">Back</span>
-  </div>
-  <div class="flashcard" id="flashcard">Loading...</div>
-  <div class="controls">
-    <button id="prevBtn">Previous</button>
-    <button id="flipBtn">Flip</button>
-    <button id="nextBtn">Next</button>
-  </div>
+  <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
+  <!-- navbar -->
+  <section class="entire-body"></section>
+    <nav class="navbar" style="gap: 80px;">
+        <a href="#" class="navbar-logo">
+            <img src="./Images/Dimroid_black_and_white.png" alt="Logo"
+                class="navbar-logo-img">
+            <span class="navbar-logo-text">Dimroid</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="navbar-cta">
+            Let's Talk
+        </a>
+    </nav>
+
+
+    <h1 style="text-align: center;">Glossary Flashcards</h1>
+    <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
+      <label for="calendar" style="font-size: 1rem; color: white; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
+      <input type="date" id="calendar" style="padding: 6px 12px; color: black; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+      <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
+    </div>
+    <div class="day-buttons">
+      <button class="day-btn" data-day="monday">Monday</button>
+      <button class="day-btn" data-day="tuesday">Tuesday</button>
+      <button class="day-btn" data-day="wednesday">Wednesday</button>
+      <button class="day-btn" data-day="thursday">Thursday</button>
+      <button class="day-btn" data-day="friday">Friday</button>
+      <button class="day-btn" data-day="saturday">Saturday</button>
+      <button class="day-btn" data-day="sunday">Sunday</button>
+    </div>
+    <div class="counter" id="counter"></div>
+    <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
+      <span id="front-label" style="font-weight: bold; color: #5a6675;">Front</span>
+      <span id="back-label" style="font-weight: bold; color: #aaa;">Back</span>
+    </div>
+    <div class="flashcard" id="flashcard">Loading...</div>
+    <div class="controls">
+      <button id="prevBtn">Previous</button>
+      <button id="flipBtn">Flip</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </section>
+
   <script>
     function loadLocalCSV() {
       fetch('glossary_words_py.csv')
@@ -267,13 +360,13 @@
       if (!flashcards || flashcards.length === 0) {
         flashcard.textContent = 'No glossary words for this day!';
         counter.textContent = '';
-        document.getElementById('front-label').style.color = '#2d3a4b';
-        document.getElementById('back-label').style.color = '#aaa';
+        document.getElementById('front-label').style.color = '#aaa' ;
+        document.getElementById('back-label').style.color = '#2d3a4b';
       } else {
         flashcard.textContent = flashcards[current].question;
         counter.textContent = `Card ${current + 1} of ${flashcards.length}`;
-        document.getElementById('front-label').style.color = '#2d3a4b';
-        document.getElementById('back-label').style.color = '#aaa';
+        document.getElementById('front-label').style.color = '#aaa' ;
+        document.getElementById('back-label').style.color = '#2d3a4b';
       }
     }
     flashcard.onclick = function(e) {
@@ -291,8 +384,8 @@
       flashcard.classList.toggle('flipped', !showingQuestion);
       setTimeout(() => {
         flashcard.textContent = showingQuestion ? flashcards[current].question : flashcards[current].answer;
-        document.getElementById('front-label').style.color = showingQuestion ? '#2d3a4b' : '#aaa';
-        document.getElementById('back-label').style.color = showingQuestion ? '#aaa' : '#2d3a4b';
+        document.getElementById('front-label').style.color = showingQuestion ? '#aaa' : '#2d3a4b';
+        document.getElementById('back-label').style.color = showingQuestion ? '#2d3a4b' : '#aaa';
       }, 250);
     };
     flipBtn.onclick = flashcard.onclick;
@@ -368,5 +461,33 @@
       controls.forEach(btn => { btn.disabled = false; btn.classList.remove('inactive-btn'); });
     }
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      particlesJS('particles-js', {
+          "particles": {
+          "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#fff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.5, "random": true },
+          "size": { "value": 3, "random": true },
+          "line_linked": { "enable": false },
+          "move": { "enable": true, "speed": 7, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+          },
+          "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+              "onhover": { "enable": true, "mode": "repulse" },
+              "onclick": { "enable": true, "mode": "push" }
+          },
+          "modes": {
+              "repulse": { "distance": 80, "duration": 0.4 },
+              "push": { "particles_nb": 4 }
+          }
+          },
+          "retina_detect": true
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 </html>

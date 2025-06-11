@@ -451,7 +451,7 @@ id,word,meaning,day,week_start,date_sent
 450,trifling,unimportant or trivial,wednesday,2025-06-02,2025-06-04
 451,apt,having a tendency to do something,wednesday,2025-06-02,2025-06-04
 452,malignant,evil in nature or effect,wednesday,2025-06-02,2025-06-04
-453,harangue,an angry and agressive speech,wednesday,2025-06-02,2025-06-04
+453,", harangue",an angry and agressive speech,wednesday,2025-06-02,2025-06-04
 454,impious,showing a lack of respect for God or Religion,wednesday,2025-06-02,2025-06-04
 455,improbable,not likely to happen or be true,wednesday,2025-06-02,2025-06-04
 456,posterity,the people who will exist in the future,wednesday,2025-06-02,2025-06-04
@@ -459,3 +459,83 @@ id,word,meaning,day,week_start,date_sent
 458,bolster,to improve something or make it stronger,wednesday,2025-06-02,2025-06-04
 459,inundate,overwhelm with things or people to be dealth with,wednesday,2025-06-02,2025-06-04
 460,existing,"as a basic part of something, inherent",wednesday,2025-06-02,2025-06-04
+461,abdicate,renounce once's thrown,thursday,2025-06-02,2025-06-05
+462,tempestuous,characterized by strong and turbulent or conflicting emotion,thursday,2025-06-02,2025-06-05
+463,savoury,something that's not pleasant or social accepted,thursday,2025-06-02,2025-06-05
+464,quaint,unusual or different in quality or appearance,thursday,2025-06-02,2025-06-05
+465,tangible,clear and definite,thursday,2025-06-02,2025-06-05
+466,inscrutable,"not showing emotions, therefore making them very difficult to understand, sphinx-like",thursday,2025-06-02,2025-06-05
+467,unscathed,"without suffering any injury, damage or harm",thursday,2025-06-02,2025-06-05
+468,blurt,to say something without thinking,thursday,2025-06-02,2025-06-05
+469,notion,a belief or something,thursday,2025-06-02,2025-06-05
+470,plagiarize,to use another persons works and pretend its yours,thursday,2025-06-02,2025-06-05
+471,retinue,"a group of advisers, assitants or an aristocrat escort",thursday,2025-06-02,2025-06-05
+472,rancor,a feeling of hate and continuing anger about something in the past,thursday,2025-06-02,2025-06-05
+473,cadaver,a corpse,thursday,2025-06-02,2025-06-05
+474,enact,"make law, put into practice",thursday,2025-06-02,2025-06-05
+475,plight,"a dangerous, difficult otherwise unplesant situation",thursday,2025-06-02,2025-06-05
+476,slanderous,"false and damaging to someone's reputation, impugn",thursday,2025-06-02,2025-06-05
+477,aesthetics,study of the principle of art and of beauty,thursday,2025-06-02,2025-06-05
+478,consensus,a general agreement,thursday,2025-06-02,2025-06-05
+479,lopsided,with one part larger than the other,thursday,2025-06-02,2025-06-05
+480,gargantuan,very big,thursday,2025-06-02,2025-06-05
+481,assertive,having or showing a confident or force personality (iron fist),friday,2025-06-02,2025-06-06
+482,demagogue,a person who seeks support by appealing to desires,friday,2025-06-02,2025-06-06
+483,dilemma,a position in which a difficult choice has to be made between various alternatives,friday,2025-06-02,2025-06-06
+484,relinquish,voluntarily cease to keep or claim; give up,friday,2025-06-02,2025-06-06
+485,interpose,"to put or to interrupt, obscure",friday,2025-06-02,2025-06-06
+486,expound,give an explicit detail of something,friday,2025-06-02,2025-06-06
+487,spurious,"not being what it purports to be, false or fake",friday,2025-06-02,2025-06-06
+488,boisterous,"energetic, noisy and cheerful",friday,2025-06-02,2025-06-06
+489,spontaneous,occuring naturally without being planned for,friday,2025-06-02,2025-06-06
+490,hurtle,move or fall at high speed uncontrollably,friday,2025-06-02,2025-06-06
+491,nettle,to make someone annoyed or slightly angry,friday,2025-06-02,2025-06-06
+492,embroil,to coerce someone to be involved in an argument or a difficult situation,friday,2025-06-02,2025-06-06
+493,oblige,to make someone legally or morally bound to do something; to do someone a favor,friday,2025-06-02,2025-06-06
+494,inherent,existing as a normal part of something,friday,2025-06-02,2025-06-06
+495,avarice,extreme greed for wealth and material gain,friday,2025-06-02,2025-06-06
+496,unorthodox,different from what is usual or expected,friday,2025-06-02,2025-06-06
+497,ostensibly,apparently or purportedly,friday,2025-06-02,2025-06-06
+498,Mmount,equivalent in serious to,friday,2025-06-02,2025-06-06
+499,elope,to leave home secretely to get married,friday,2025-06-02,2025-06-06
+500,oblique,indirect in a way that the actual meaning isn't clear,friday,2025-06-02,2025-06-06
+501,vigor,"strength, energy or enthusiasm",monday,2025-06-09,2025-06-09
+502,aversion,a strong dislike or disinclination,monday,2025-06-09,2025-06-09
+503,maxim,a short pithy statement expressing a general truth or rule of conduct,monday,2025-06-09,2025-06-09
+504,asocial,not interested in forming social groups or connections with others,monday,2025-06-09,2025-06-09
+505,astute,able to understand a situation quickly and take advantage of it,monday,2025-06-09,2025-06-09
+506,virtue,a good moral quality in a person,monday,2025-06-09,2025-06-09
+507,resent,angry because you have been coerced to accept something you don't want to do,monday,2025-06-09,2025-06-09
+508,sphinx-like,mysterious and not allowing people to know what you're thinking,monday,2025-06-09,2025-06-09
+509,Chinks,"a narrow opening, usually one that admits light",monday,2025-06-09,2025-06-09
+510,fervor,intense and passionate feeling,monday,2025-06-09,2025-06-09
+511,invective,"criticism that is very forceful, unkind",monday,2025-06-09,2025-06-09
+512,glower,have an angry or sullen look on once's face,monday,2025-06-09,2025-06-09
+513,subservient,prepared to obey others unquestionably,monday,2025-06-09,2025-06-09
+514,refute,to prove a persons statement is wrong,monday,2025-06-09,2025-06-09
+515,portentous,done in a pompously or overly solemn manner so as to impress,monday,2025-06-09,2025-06-09
+516,malleable,easily changed,monday,2025-06-09,2025-06-09
+517,fraternity,a group of people sharing common interests or profession,monday,2025-06-09,2025-06-09
+518,mesmerize,to have someone attention fully that they can't think of anything else,monday,2025-06-09,2025-06-09
+519,engender,renaissance of a peculiar feeling in someone or make a situation come into existence,monday,2025-06-09,2025-06-09
+520,objectify,"to treat a person like a tool or toy, realistify the abstract",monday,2025-06-09,2025-06-09
+521,non compos mentis,not of sound mind,tuesday,2025-06-09,2025-06-10
+522,inept,"not skilled or effective, charlatan",tuesday,2025-06-09,2025-06-10
+523,wit,a person who is skilled at using words in a clever and humorous way,tuesday,2025-06-09,2025-06-10
+524,bstinate,unreasonably determined,tuesday,2025-06-09,2025-06-10
+525,maelstrom,"a situation in which there is great confusion, violence or destruction",tuesday,2025-06-09,2025-06-10
+526,fruition,the point at which a plan or project is realized,tuesday,2025-06-09,2025-06-10
+527,brazenly,in a bold and shameless way,tuesday,2025-06-09,2025-06-10
+528,panacea,solution to all problems,tuesday,2025-06-09,2025-06-10
+529,androgynous,partly male and partly female,tuesday,2025-06-09,2025-06-10
+530,inoculate,becoming immune or build resistant,tuesday,2025-06-09,2025-06-10
+531,abysmal,"extremely bad, appaling",tuesday,2025-06-09,2025-06-10
+532,nay,to introduce a second wordto emphaize more on it,tuesday,2025-06-09,2025-06-10
+533,vestige,a trace or remnant of something that is disappearing,tuesday,2025-06-09,2025-06-10
+534,lechery,show a strong sexual interest in someonemostly done by men,tuesday,2025-06-09,2025-06-10
+535,vulgar,"not dignified enough for the aristocrats, rude, likely to upset",tuesday,2025-06-09,2025-06-10
+536,stultify,to stop something from developing,tuesday,2025-06-09,2025-06-10
+537,chastity,the act of refraining from extra marital sexual intercourse,tuesday,2025-06-09,2025-06-10
+538,hitherto,until now or until the point in time under discussion,tuesday,2025-06-09,2025-06-10
+539,prosperity,successful in material terms,tuesday,2025-06-09,2025-06-10
+540,topsy-turvy,"confused, lacking organization not giving importance to unexpected things",tuesday,2025-06-09,2025-06-10
