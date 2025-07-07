@@ -1,0 +1,97 @@
+WORD ANALYSIS REPORT
+==================================================
+
+SUMMARY STATISTICS:
+--------------------
+Total words in CSV: 1023
+Unique words in CSV: 989
+Duplicates in CSV: 34
+Total words in Glossary: 1055
+Unique words in Glossary: 1016
+Duplicates in Glossary: 39
+Unfound words: 0
+
+DUPLICATES IN CSV FILE:
+-------------------------
+abolish: 2 occurrences
+apt: 2 occurrences
+avid: 2 occurrences
+brazenly: 2 occurrences
+cantankerous: 2 occurrences
+cohesion: 2 occurrences
+contingency: 2 occurrences
+countenance: 2 occurrences
+dissension: 2 occurrences
+elaborate: 2 occurrences
+epiphany: 2 occurrences
+fawn: 2 occurrences
+feign: 2 occurrences
+foist: 2 occurrences
+fruition: 2 occurrences
+inadvertently: 2 occurrences
+invariably: 2 occurrences
+obstinate: 2 occurrences
+pathological: 2 occurrences
+pernicious: 2 occurrences
+precarious: 2 occurrences
+prerogative: 2 occurrences
+quaint: 2 occurrences
+remonstrate: 2 occurrences
+requite: 2 occurrences
+sentiment: 2 occurrences
+spurious: 2 occurrences
+tirade: 2 occurrences
+vagaries: 2 occurrences
+vantage: 2 occurrences
+vie: 2 occurrences
+visceral: 2 occurrences
+volition: 2 occurrences
+whim: 2 occurrences
+
+Total duplicate entries in CSV: 34
+
+DUPLICATES IN GLOSSARY FILE:
+----------------------------
+abolish: 2 occurrences
+adversity: 2 occurrences
+apt: 2 occurrences
+avid: 2 occurrences
+brazenly: 2 occurrences
+cantankerous: 2 occurrences
+cohesion: 2 occurrences
+contingency: 2 occurrences
+countenance: 2 occurrences
+dissension: 2 occurrences
+don: 2 occurrences
+elaborate: 2 occurrences
+epiphany: 2 occurrences
+fawn: 2 occurrences
+feign: 2 occurrences
+foist: 2 occurrences
+fruition: 2 occurrences
+inadvertently: 2 occurrences
+indispensable: 2 occurrences
+invariably: 2 occurrences
+lopsided: 2 occurrences
+meander: 2 occurrences
+obstinate: 2 occurrences
+pathological: 2 occurrences
+pernicious: 2 occurrences
+precarious: 2 occurrences
+prerogative: 2 occurrences
+quaint: 2 occurrences
+remonstrate: 2 occurrences
+requite: 2 occurrences
+sentiment: 2 occurrences
+spurious: 2 occurrences
+tirade: 2 occurrences
+vagaries: 2 occurrences
+vantage: 2 occurrences
+vie: 2 occurrences
+visceral: 2 occurrences
+volition: 2 occurrences
+whim: 2 occurrences
+
+Total duplicate entries in Glossary: 39
+
+✅ All words from CSV were found in Glossary.md!

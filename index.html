@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Glossary Flashcards</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    body {
+    .body-2 {
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
     }
-
-    
 
     .navbar {
       position: relative;
@@ -67,10 +65,35 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.16);
     }
     .controls {
-      display: flex;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 3px;
       margin-bottom: 20px;
+      justify-items: center;
+      align-items: center;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
     }
+
+    .controls > button {
+      width: 100%;
+      height: 100%;
+    }
+
+    .back-controls {
+      justify-content: start;
+    }
+
+    .back-controls > button {
+      margin-top: 30px;
+      margin-left: 70px;
+      font-size: 10px;
+      background: #113449;
+      width: 100%;
+    }
+
     button {
       background: #2d3a4b;
       color: #fff;
@@ -148,11 +171,156 @@
     color:black
   }
 
+      /* Sentences Section Styles */
+    .entire-body2 {
+      min-width: 500px;
+      height: 110vh;
+      position: absolute;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.096);
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+      padding: 32px 24px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .sentences-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-wrapper {
+      display: flex;
+      width: 400px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: calc(400px * 6);
+    }
+
+    .sentence-div {
+      width: 400px;
+      height: 250px;
+      background: rgba(180, 200, 255, 0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(100, 150, 200, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .sentence-div.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sentence-div:not(.active) {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .sentence-number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #38b6ff;
+      margin-bottom: 15px;
+    }
+
+    .sentence-text {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Responsive design for sentences */
+    @media screen and (max-width: 572px) {
+      .entire-body2 {
+        min-width: 400px;
+        height: 110vh;
+        position: absolute;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .sentences-wrapper {
+        width: 350px;
+        height: 220px;
+      }
+      
+      .sentences-track {
+        width: calc(350px * 6);
+      }
+      
+      .sentence-div {
+        width: 350px;
+        height: 220px;
+        padding: 15px;
+      }
+
+      .entire-body2 {
+        min-width: 365px;
+      }
+    }
+
+    @media screen and (max-width: 434px) {
+      .entire-body2 {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .sentences-wrapper {
+        width: 300px;
+        height: 200px;
+      }
+      
+      .sentences-track {
+        width: calc(300px * 6);
+      }
+      
+      .sentence-div {
+        width: 300px;
+        height: 200px;
+        padding: 12px;
+      }
+    }
+
   @media screen and (min-width: 571px) {
 
     .entire-body {
         min-width: 500px;
-        height: 110vh;
+        height: 120vh;
         position: absolute;
         z-index: -1;
         background: rgba(255, 255, 255, 0.096);
@@ -160,17 +328,28 @@
         /* backdrop-filter: blur(12px); */
         /* -webkit-backdrop-filter: blur(12px); */
         border-radius: 18px;
-        box-shadow: 0 8px 32px 0 rgb(135, 31, 36);
         padding: 32px 24px;
         margin-top: 10px;
         margin-bottom: 40px;
+      }
+
+      .controls {
+        width: 60%;
+        gap: 16px;
+      }
+    }
+
+    @media screen and (min-width: 850px) {
+      .controls {
+        width: 35%;
+        gap: 20px;
       }
     }
 
     @media screen and (max-width: 572px) {
       .entire-body {
+        height: 120vh !important; 
         min-width: 400px;
-        height: 110vh;
         position: absolute;
         z-index: -1;
         background: rgba(255, 255, 255, 0.096);
@@ -207,6 +386,10 @@
       .entire-body {
         display: none;
       }
+
+      .navbar {
+        gap: 50px !important;
+      }
     }
   </style>
 
@@ -215,47 +398,120 @@
 <body>
   <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
   <!-- navbar -->
-  <section class="entire-body"></section>
-    <nav class="navbar" style="gap: 80px;">
-        <a href="#" class="navbar-logo">
-            <img src="./Images/Dimroid_black_and_white.png" alt="Logo"
-                class="navbar-logo-img">
-            <span class="navbar-logo-text">Dimroid</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" class="navbar-cta">
-            Let's Talk
-        </a>
-    </nav>
+    <section class="body-2">
+        <section class="entire-body"></section>
+        <nav class="navbar" style="gap: 80px;">
+            <a href="#" class="navbar-logo">
+                <img src="./Images/Dimroid_black_and_white.png" alt="Logo"
+                    class="navbar-logo-img">
+                <span class="navbar-logo-text">Dimroid</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="navbar-cta">
+                Let's Talk
+            </a>
+        </nav>
 
 
-    <h1 style="text-align: center;">Glossary Flashcards</h1>
-    <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
-      <label for="calendar" style="font-size: 1rem; color: white; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
-      <input type="date" id="calendar" style="padding: 6px 12px; color: black; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
-      <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
-    </div>
-    <div class="day-buttons">
-      <button class="day-btn" data-day="monday">Monday</button>
-      <button class="day-btn" data-day="tuesday">Tuesday</button>
-      <button class="day-btn" data-day="wednesday">Wednesday</button>
-      <button class="day-btn" data-day="thursday">Thursday</button>
-      <button class="day-btn" data-day="friday">Friday</button>
-      <button class="day-btn" data-day="saturday">Saturday</button>
-      <button class="day-btn" data-day="sunday">Sunday</button>
-    </div>
-    <div class="counter" id="counter"></div>
-    <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
-      <span id="front-label" style="font-weight: bold; color: #5a6675;">Front</span>
-      <span id="back-label" style="font-weight: bold; color: #aaa;">Back</span>
-    </div>
-    <div class="flashcard" id="flashcard">Loading...</div>
-    <div class="controls">
-      <button id="prevBtn">Previous</button>
-      <button id="flipBtn">Flip</button>
-      <button id="nextBtn">Next</button>
-    </div>
+        <h1 style="text-align: center;">Glossary Flashcards</h1>
+        <div style="display: flex; text-align: center; flex-direction: column; align-items: center; margin-bottom: 10px; padding:0 10px;">
+          <label for="calendar" style="font-size: 1rem; color: white; margin-bottom: 4px;">Select a date to view that week's glossary flashcards:</label>
+          <input type="date" id="calendar" style="padding: 6px 12px; color: black; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;" />
+          <div id="week-indicator" style="margin-top: 6px; color: #38b6ff; font-weight: bold;"></div>
+        </div>
+        <div class="day-buttons">
+          <button class="day-btn" data-day="monday">Monday</button>
+          <button class="day-btn" data-day="tuesday">Tuesday</button>
+          <button class="day-btn" data-day="wednesday">Wednesday</button>
+          <button class="day-btn" data-day="thursday">Thursday</button>
+          <button class="day-btn" data-day="friday">Friday</button>
+          <button class="day-btn" data-day="saturday">Saturday</button>
+          <button class="day-btn" data-day="sunday">Sunday</button>
+        </div>
+        <div class="counter" id="counter"></div>
+        <div style="display: flex; margin-top: 25px; justify-content: center; align-items: center; gap: 16px; margin-bottom: 4px;">
+          <span id="front-label" style="font-weight: bold; color: #5a6675;">Front</span>
+          <span id="back-label" style="font-weight: bold; color: #aaa;">Back</span>
+        </div>
+        <div class="flashcard" id="flashcard">Loading...</div>
+        <div class="controls">
+          <button id="prevBtn">Previous</button>
+          <button id="flipBtn">Flip</button>
+          <button id="nextBtn">Next</button>
+          <button id="viewSentencesBtn">View Sentences</button>
+        </div>
   </section>
 
+  <!-- Add the sentences section (hidden by default) -->
+  <div class="center-div">
+    <section id="sentences-section" class="entire-body2" style="display: none;">
+      <nav class="navbar" style="gap: 80px;">
+          <a href="#" class="navbar-logo">
+              <img src="./Images/Dimroid_black_and_white.png" alt="Logo"
+                  class="navbar-logo-img">
+              <span class="navbar-logo-text">Dimroid</span>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="navbar-cta">
+              Let's Talk
+          </a>
+      </nav>
+
+      <div class="controls back-controls">
+          <button id="backToFlashcards">
+            <i class="fa fa-arrow-left" aria-hidden="true" style="margin-right:8px;"></i>
+            Back to Flashcards
+          </button>
+      </div>
+      
+      <h1 style="text-align: center;" id="sentences-title">Sentences for: <span id="current-word"></span></h1>
+                
+        <section class="sentences-container-class">
+          <div class="sentences-container">
+            <div class="sentences-wrapper">
+              <div class="sentences-track" id="sentencesTrack">
+                <div class="sentence-div active" id="sentence1">
+                  <div class="sentence-number">Sentence 1</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+          
+                <div class="sentence-div" id="sentence2">
+                  <div class="sentence-number">Sentence 2</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+          
+                <div class="sentence-div" id="sentence3">
+                  <div class="sentence-number">Sentence 3</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+          
+                <div class="sentence-div" id="sentence4">
+                  <div class="sentence-number">Sentence 4</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+          
+                <div class="sentence-div" id="sentence5">
+                  <div class="sentence-number">Sentence 5</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+          
+                <div class="sentence-div" id="sentence6">
+                  <div class="sentence-number">Sentence 6</div>
+                  <div class="sentence-text">Loading sentence...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <div class="controls">
+          <button id="sentencePrevBtn">Previous Sentence</button>
+          <button id="sentenceNextBtn">Next Sentence</button>
+      </div>
+
+
+    </section>
+  </div>
+
+  
   <script>
     function loadLocalCSV() {
       fetch('glossary_words_py.csv')
@@ -487,6 +743,304 @@
           "retina_detect": true
       });
     });
+  </script>
+   <script>
+    // Sentences functionality variables
+    const viewSentencesBtn = document.getElementById('viewSentencesBtn');
+    const backToFlashcardsBtn = document.getElementById('backToFlashcards');
+    const sentencesSection = document.getElementById('sentences-section');
+    const flashcardsSection = document.querySelector('.body-2');
+    const currentWordSpan = document.getElementById('current-word');
+    
+    // Sentence carousel variables
+    let currentSentenceIndex = 0;
+    const totalSentences = 6;
+    const sentencesTrack = document.getElementById('sentencesTrack');
+    const sentenceDivs = document.querySelectorAll('.sentence-div');
+    const sentencePrevBtn = document.getElementById('sentencePrevBtn');
+    const sentenceNextBtn = document.getElementById('sentenceNextBtn');
+    let sentencesData = [];
+    let currentWordIndex = 0;
+    let totalWords = 0;
+    let savedFlashcardState = { current: 0, day: 'monday' }; // To save flashcard state
+
+    // Load the sentences CSV
+    function loadSentencesCSV() {
+      fetch('glossary_words_sentence_usage.csv')
+        .then(response => {
+          if (!response.ok) throw new Error('Sentences CSV not found');
+          return response.text();
+        })
+        .then(csv => {
+          sentencesData = parseSentencesCSV(csv);
+          totalWords = sentencesData.length;
+          console.log(`Loaded ${totalWords} words from sentences CSV`);
+        })
+        .catch(error => {
+          console.error('Failed to load sentences CSV:', error);
+        });
+    }
+
+    // Parse sentences CSV
+    function parseSentencesCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+      const data = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const values = [];
+        let current = '';
+        let inQuotes = false;
+        
+        for (let j = 0; j < lines[i].length; j++) {
+          const char = lines[i][j];
+          if (char === '"') {
+            inQuotes = !inQuotes;
+          } else if (char === ',' && !inQuotes) {
+            values.push(current.trim().replace(/^"|"$/g, ''));
+            current = '';
+          } else {
+            current += char;
+          }
+        }
+        values.push(current.trim().replace(/^"|"$/g, ''));
+
+        if (values.length >= headers.length && values[0]) {
+          const rowData = {};
+          headers.forEach((header, index) => {
+            rowData[header] = values[index] || '';
+          });
+          data.push(rowData);
+        }
+      }
+      return data;
+    }
+
+    // Function to find sentences for a word
+    function getSentencesForWord(word) {
+      const wordData = sentencesData.find(item => 
+        item.word && item.word.toLowerCase() === word.toLowerCase()
+      );
+      
+      if (wordData) {
+        return [
+          wordData['Sentence 1'] || 'No sentence available',
+          wordData['Sentence 2'] || 'No sentence available',
+          wordData['Sentence 3'] || 'No sentence available',
+          wordData['Sentence 4'] || 'No sentence available',
+          wordData['Sentence 5'] || 'No sentence available',
+          wordData['Sentence 6'] || 'No sentence available'
+        ];
+      }
+      return Array(6).fill('No sentences found for this word');
+    }
+
+    // Function to update sentence carousel
+    function updateSentenceCarousel() {
+      let slideWidth = 400;
+      if (window.innerWidth <= 400) {
+        slideWidth = 300;
+      } else if (window.innerWidth <= 500) {
+        slideWidth = 350;
+      }
+      
+      const translateX = -currentSentenceIndex * slideWidth;
+      sentencesTrack.style.transform = `translateX(${translateX}px)`;
+      
+      sentenceDivs.forEach((div, index) => {
+        if (index === currentSentenceIndex) {
+          div.classList.add('active');
+        } else {
+          div.classList.remove('active');
+        }
+      });
+    }
+
+    // Function to navigate to the next sentence
+    function navigateToNextSentence() {
+      currentSentenceIndex = (currentSentenceIndex + 1) % totalSentences;
+      updateSentenceCarousel();
+    }
+
+    // Function to navigate to the previous sentence
+    function navigateToPreviousSentence() {
+      currentSentenceIndex = (currentSentenceIndex - 1 + totalSentences) % totalSentences;
+      updateSentenceCarousel();
+    }
+
+    // Function to find word index in sentences data
+    function findWordIndexInSentences(word) {
+      return sentencesData.findIndex(item => 
+        item.word && item.word.toLowerCase() === word.toLowerCase()
+      );
+    }
+
+    // Update the display for the current word in sentences
+    function updateWordDisplay() {
+      if (sentencesData.length === 0 || currentWordIndex >= sentencesData.length) return;
+      
+      const currentWord = sentencesData[currentWordIndex];
+      currentWordSpan.textContent = currentWord.word || 'Unknown';
+      
+      // Update sentences
+      for (let i = 1; i <= 6; i++) {
+        const sentenceDiv = document.getElementById(`sentence${i}`);
+        const sentenceText = sentenceDiv.querySelector('.sentence-text');
+        const sentence = currentWord[`Sentence ${i}`] || `No sentence ${i} available`;
+        sentenceText.textContent = sentence;
+      }
+      
+      // Reset to first sentence
+      currentSentenceIndex = 0;
+      updateSentenceCarousel();
+    }
+
+    // Function to show sentences section
+    function showSentencesSection(word) {
+      // Save current flashcard state
+      savedFlashcardState = {
+        current: current,
+        day: currentDay
+      };
+
+      // Find the word in sentences data
+      currentWordIndex = findWordIndexInSentences(word);
+      
+      if (currentWordIndex === -1) {
+        alert(`Sentences not found for "${word}"`);
+        return;
+      }
+
+      updateWordDisplay();
+      
+      // Hide flashcards, show sentences
+      flashcardsSection.style.display = 'none';
+      sentencesSection.style.display = 'block';
+    }
+
+    // Function to show flashcards section
+    function showFlashcardsSection() {
+      sentencesSection.style.display = 'none';
+      flashcardsSection.style.display = 'flex';
+      
+      // Restore flashcard state
+      current = savedFlashcardState.current;
+      currentDay = savedFlashcardState.day;
+      flashcards = flashcardsByDay[currentDay] || [];
+      updateFlashcard();
+    }
+
+    // Event listeners
+    viewSentencesBtn.addEventListener('click', function() {
+      if (!flashcards || flashcards.length === 0) {
+        alert('No flashcard selected');
+        return;
+      }
+      const currentWord = flashcards[current].question;
+      showSentencesSection(currentWord);
+    });
+
+    backToFlashcardsBtn.addEventListener('click', showFlashcardsSection);
+
+    sentenceNextBtn.addEventListener('click', navigateToNextSentence);
+    sentencePrevBtn.addEventListener('click', navigateToPreviousSentence);
+
+    // Keyboard navigation for sentences
+    document.addEventListener('keydown', (e) => {
+      if (sentencesSection.style.display === 'block') {
+        if (e.key === 'ArrowRight') {
+          navigateToNextSentence();
+        } else if (e.key === 'ArrowLeft') {
+          navigateToPreviousSentence();
+        } else if (e.key === 'Escape') {
+          showFlashcardsSection();
+        }
+      }
+    });
+
+    // Handle window resize for sentences
+    window.addEventListener('resize', updateSentenceCarousel);
+
+    // Touch swipe functionality for sentences
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+    const minSwipeDistance = 50; // Minimum distance for a swipe to register
+
+    function handleTouchStart(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+
+    function handleTouchMove(e) {
+      // Prevent default scrolling during horizontal swipes
+      const touchCurrentX = e.touches[0].clientX;
+      const touchCurrentY = e.touches[0].clientY;
+      const deltaX = Math.abs(touchCurrentX - touchStartX);
+      const deltaY = Math.abs(touchCurrentY - touchStartY);
+      
+      // If horizontal movement is greater than vertical, prevent default scrolling
+      if (deltaX > deltaY) {
+        e.preventDefault();
+      }
+    }
+
+    function handleTouchEnd(e) {
+      touchEndX = e.changedTouches[0].clientX;
+      touchEndY = e.changedTouches[0].clientY;
+      handleSwipe();
+    }
+
+    function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const absDeltaX = Math.abs(deltaX);
+      const absDeltaY = Math.abs(deltaY);
+
+      // Check if it's a horizontal swipe (horizontal movement > vertical movement)
+      if (absDeltaX > absDeltaY && absDeltaX > minSwipeDistance) {
+        if (deltaX > 0) {
+          // Swipe right - go to previous sentence
+          navigateToPreviousSentence();
+        } else {
+          // Swipe left - go to next sentence
+          navigateToNextSentence();
+        }
+      }
+    }
+
+    // Add touch event listeners to the sentences wrapper
+    document.addEventListener('DOMContentLoaded', function() {
+      const sentencesWrapper = document.querySelector('.sentences-wrapper');
+      if (sentencesWrapper) {
+        sentencesWrapper.addEventListener('touchstart', handleTouchStart, { passive: false });
+        sentencesWrapper.addEventListener('touchmove', handleTouchMove, { passive: false });
+        sentencesWrapper.addEventListener('touchend', handleTouchEnd, { passive: true });
+      }
+    });
+
+    // Load sentences CSV on page load
+    loadSentencesCSV();
+
+    // Update the controls disable/enable functions to include viewSentencesBtn
+    function disableAllControls() {
+      const controls = [prevBtn, nextBtn, flipBtn, viewSentencesBtn, ...dayBtns];
+      controls.forEach(btn => { btn.disabled = true; btn.classList.add('inactive-btn'); });
+    }
+
+    function enableAllControls() {
+      const controls = [prevBtn, nextBtn, flipBtn, viewSentencesBtn, ...dayBtns];
+      controls.forEach(btn => { btn.disabled = false; btn.classList.remove('inactive-btn'); });
+    }
+  </script>
+
+  <script>
+    // Your existing JavaScript code continues here...
+    function loadLocalCSV() {
+      // ... existing code ...
+    }
+    // ... rest of your existing JavaScript ...
   </script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary Flashcards</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="sentences.css">
+</head>
+    <body>
+        <div id="particles-js" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
+        <!-- navbar -->
+        <section class="entire-body2">
+            <nav class="navbar" style="gap: 80px;">
+                <a href="#" class="navbar-logo">
+                    <img src="./Images/Dimroid_black_and_white.png" alt="Logo"
+                        class="navbar-logo-img">
+                    <span class="navbar-logo-text">Dimroid</span>
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="navbar-cta">
+                    Let's Talk
+                </a>
+            </nav>
+            <h1 style="text-align: center;">Sentences for: <span id="current-word">Loading...</span></h1>
+            
+            <div class="word-navigation" style="text-align: center; margin: 20px 0;">
+                <button id="prevWordBtn" style="margin: 0 10px;">Previous Word</button>
+                <span id="word-counter" style="margin: 0 20px; color: #38b6ff; font-weight: bold;">Word 1 of 0</span>
+                <button id="nextWordBtn" style="margin: 0 10px;">Next Word</button>
+            </div>
+            
+            <div class="sentences-container">
+                <div class="sentences-wrapper">
+                    <div class="sentences-track" id="sentencesTrack">
+                    <div class="sentence-div active" id="sentence1">
+                        <div class="sentence-number">Sentence 1</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    
+                    <div class="sentence-div" id="sentence2">
+                        <div class="sentence-number">Sentence 2</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    
+                    <div class="sentence-div" id="sentence3">
+                        <div class="sentence-number">Sentence 3</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    
+                    <div class="sentence-div" id="sentence4">
+                        <div class="sentence-number">Sentence 4</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    
+                    <div class="sentence-div" id="sentence5">
+                        <div class="sentence-number">Sentence 5</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    
+                    <div class="sentence-div" id="sentence6">
+                        <div class="sentence-number">Sentence 6</div>
+                        <div class="sentence-text">Loading sentence...</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prevBtn">Previous Sentence</button>
+                <button id="nextBtn">Next Sentence</button>
+                <button id="backToIndexBtn">Back to Flashcards</button>
+            </div>
+        </section>
+        
+        <script>
+            // CSV data and word management
+            let csvData = [];
+            let currentWordIndex = 0;
+            let totalWords = 0;
+            
+            // Sentence carousel variables
+            let currentSentenceIndex = 0;
+            const totalSentences = 6;
+            const sentencesTrack = document.getElementById('sentencesTrack');
+            const sentenceDivs = document.querySelectorAll('.sentence-div');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevWordBtn = document.getElementById('prevWordBtn');
+            const nextWordBtn = document.getElementById('nextWordBtn');
+            const backToIndexBtn = document.getElementById('backToIndexBtn');
+            const currentWordSpan = document.getElementById('current-word');
+            const wordCounter = document.getElementById('word-counter');
+
+            // Load and parse CSV data
+            function loadCSV() {
+                fetch('glossary_words_sentence_usage.csv')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('CSV file not found');
+                        }
+                        return response.text();
+                    })
+                    .then(csvText => {
+                        csvData = parseCSV(csvText);
+                        totalWords = csvData.length;
+                        console.log(`Loaded ${totalWords} words from CSV`);
+                        
+                        if (totalWords > 0) {
+                            updateWordDisplay();
+                            updateWordNavigation();
+                        } else {
+                            currentWordSpan.textContent = 'No words found';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading CSV:', error);
+                        currentWordSpan.textContent = 'Error loading words';
+                    });
+            }
+
+            // Parse CSV with proper quote handling
+            function parseCSV(text) {
+                const lines = text.trim().split(/\r?\n/);
+                const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+                const data = [];
+
+                for (let i = 1; i < lines.length; i++) {
+                    const values = [];
+                    let current = '';
+                    let inQuotes = false;
+                    
+                    for (let j = 0; j < lines[i].length; j++) {
+                        const char = lines[i][j];
+                        if (char === '"') {
+                            inQuotes = !inQuotes;
+                        } else if (char === ',' && !inQuotes) {
+                            values.push(current.trim().replace(/^"|"$/g, ''));
+                            current = '';
+                        } else {
+                            current += char;
+                        }
+                    }
+                    values.push(current.trim().replace(/^"|"$/g, ''));
+
+                    if (values.length >= headers.length && values[0]) {
+                        const rowData = {};
+                        headers.forEach((header, index) => {
+                            rowData[header] = values[index] || '';
+                        });
+                        data.push(rowData);
+                    }
+                }
+                return data;
+            }
+
+            // Update the display for the current word
+            function updateWordDisplay() {
+                if (csvData.length === 0) return;
+                
+                const currentWord = csvData[currentWordIndex];
+                currentWordSpan.textContent = currentWord.word || 'Unknown';
+                
+                // Update sentences
+                for (let i = 1; i <= 6; i++) {
+                    const sentenceDiv = document.getElementById(`sentence${i}`);
+                    const sentenceText = sentenceDiv.querySelector('.sentence-text');
+                    const sentence = currentWord[`Sentence ${i}`] || `No sentence ${i} available`;
+                    sentenceText.textContent = sentence;
+                }
+                
+                // Reset to first sentence
+                currentSentenceIndex = 0;
+                updateSentenceCarousel();
+            }
+
+            // Update word navigation
+            function updateWordNavigation() {
+                wordCounter.textContent = `Word ${currentWordIndex + 1} of ${totalWords}`;
+                
+                // Update button states
+                prevWordBtn.disabled = currentWordIndex === 0;
+                nextWordBtn.disabled = currentWordIndex === totalWords - 1;
+            }
+
+            // Navigate to next word
+            function goToNextWord() {
+                if (currentWordIndex < totalWords - 1) {
+                    currentWordIndex++;
+                    updateWordDisplay();
+                    updateWordNavigation();
+                }
+            }
+
+            // Navigate to previous word
+            function goToPreviousWord() {
+                if (currentWordIndex > 0) {
+                    currentWordIndex--;
+                    updateWordDisplay();
+                    updateWordNavigation();
+                }
+            }
+
+            // Function to update sentence carousel
+            function updateSentenceCarousel() {
+                // Get current width for responsive behavior
+                let slideWidth = 400;
+                if (window.innerWidth <= 400) {
+                    slideWidth = 300;
+                } else if (window.innerWidth <= 500) {
+                    slideWidth = 350;
+                }
+                
+                // Calculate the translateX value to move the track
+                const translateX = -currentSentenceIndex * slideWidth;
+                sentencesTrack.style.transform = `translateX(${translateX}px)`;
+                
+                // Update active class for visual feedback
+                sentenceDivs.forEach((div, index) => {
+                    if (index === currentSentenceIndex) {
+                        div.classList.add('active');
+                    } else {
+                        div.classList.remove('active');
+                    }
+                });
+            }
+
+            // Function to navigate to the next sentence
+            function navigateToNext() {
+                currentSentenceIndex = (currentSentenceIndex + 1) % totalSentences;
+                updateSentenceCarousel();
+            }
+
+            // Function to navigate to the previous sentence
+            function navigateToPrevious() {
+                currentSentenceIndex = (currentSentenceIndex - 1 + totalSentences) % totalSentences;
+                updateSentenceCarousel();
+            }
+
+            // Event listeners for navigation buttons
+            nextBtn.addEventListener('click', navigateToNext);
+            prevBtn.addEventListener('click', navigateToPrevious);
+            nextWordBtn.addEventListener('click', goToNextWord);
+            prevWordBtn.addEventListener('click', goToPreviousWord);
+            
+            // Back to index button
+            backToIndexBtn.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                        navigateToNext();
+                        break;
+                    case 'ArrowLeft':
+                        navigateToPrevious();
+                        break;
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        goToPreviousWord();
+                        break;
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        goToNextWord();
+                        break;
+                    case 'Escape':
+                        window.location.href = 'index.html';
+                        break;
+                }
+            });
+
+            // Handle window resize for responsive behavior
+            window.addEventListener('resize', updateSentenceCarousel);
+
+            // Initialize the page
+            document.addEventListener('DOMContentLoaded', function() {
+                loadCSV();
+                updateSentenceCarousel();
+                
+                // Particles.js initialization
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#fff" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": true },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": { "enable": false },
+                        "move": { "enable": true, "speed": 7, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": { "enable": true, "mode": "repulse" },
+                            "onclick": { "enable": true, "mode": "push" }
+                        },
+                        "modes": {
+                            "repulse": { "distance": 80, "duration": 0.4 },
+                            "push": { "particles_nb": 4 }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            });
+        </script>
+        
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,303 @@
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .navbar {
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 40px;
+      color: white;
+    }
+    .flashcard {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      width: 350px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 30px 20px 30px;
+      padding: 32px 24px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.5s cubic-bezier(.4,2,.6,1), background 0.2s;
+      transform-style: preserve-3d;
+    }
+    
+    @media screen and (max-width: 429px) {
+      .flashcard {
+        width: 80%;
+        margin: 0px auto;
+        padding: 24px 16px;
+      }
+      .day-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 700px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+      }
+
+    }
+    .flashcard:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+    }
+    .controls {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    button {
+      background: #2d3a4b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #38b6ff;
+    }
+    .counter {
+      color: #888;
+      margin-bottom: 10px;
+    }
+    @media screen and (min-width: 429px) {
+      .day-buttons {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 400px;
+      }
+    }
+    .day-btn {
+      background: #2d3a4b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .day-btn:hover {
+      background: #38b6ff;
+    }
+    .inactive-btn {
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+    @keyframes ripple-flashcard {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    .day-btn-ripple {
+      position: absolute;
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple-day-btn 0.5s linear;
+      background: rgba(30,30,60,0.5);
+      pointer-events: none;
+      z-index: 2;
+    }
+    @keyframes ripple-day-btn {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+    .flashcard.flipped {
+      transform: rotateY(360deg);
+      transform: rotateX(360deg);
+    }
+
+      .flashcard {
+    color:black
+  }
+
+  @media screen and (min-width: 571px) {
+
+    .entire-body2 {
+        min-width: 500px;
+        height: fit-content;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgb(135, 31, 36);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 572px) {
+      .entire-body2 {
+        min-width: 400px;
+        height: 110vh;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 469px) {
+      .entire-body2 {
+        min-width: 365px;
+        height: 110vh;
+        position: absolute;
+        z-index: -1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        /* backdrop-filter: blur(12px); */
+        /* -webkit-backdrop-filter: blur(12px); */
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        padding: 32px 24px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 434px) {
+      .entire-body2 {
+        display: none;
+      }
+    }
+
+    .sentences-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-wrapper {
+      display: flex;
+      width: 400px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: calc(400px * 6);
+    }
+
+    .sentence-div {
+      width: 400px;
+      height: 250px;
+      background: rgba(180, 200, 255, 0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(100, 150, 200, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .sentence-div.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sentence-div:not(.active) {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .sentence-number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #38b6ff;
+      margin-bottom: 15px;
+    }
+
+    .sentence-text {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media screen and (max-width: 500px) {
+      .sentences-wrapper {
+        width: 350px;
+        height: 220px;
+      }
+      
+      .sentences-track {
+        width: calc(350px * 6);
+      }
+      
+      .sentence-div {
+        width: 350px;
+        height: 220px;
+        padding: 15px;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .sentences-wrapper {
+        width: 300px;
+        height: 200px;
+      }
+      
+      .sentences-track {
+        width: calc(300px * 6);
+      }
+      
+      .sentence-div {
+        width: 300px;
+        height: 200px;
+        padding: 12px;
+      }
+    }
