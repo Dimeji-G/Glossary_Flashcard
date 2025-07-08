@@ -773,7 +773,7 @@ h1 {
   box-shadow: 0 8px 32px rgba(0,0,0,0.16);
 }
 .controls {
-  display: flex;
+  /* display: flex; */
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -912,11 +912,4 @@ color:black
   .entire-body {
     display: none;
   }
-}
-
-@media screen and (max-width: 4690x) {
-  .entire-body2 {
-    
-  }
-  
 }

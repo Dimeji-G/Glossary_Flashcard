@@ -1,0 +1,154 @@
+     /* Sentences Section Styles */
+    .entire-body2 {
+      min-width: 500px;
+      height: 110vh;
+      position: absolute;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.096);
+      border: 1.5px solid rgba(255,255,255,0.5);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    #visibility-toggle {
+      border-radius: 30px;
+    }
+
+    @media screen and (min-width: 449px) {
+      #visibility-toggle {
+        padding: 30px;
+        border: white solid 1px;
+      }
+      
+    }
+
+    .sentences-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      /* padding: 20px; */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-wrapper {
+      display: flex;
+      width: 400px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sentences-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: calc(400px * 6);
+    }
+
+    .sentence-div {
+      width: 400px;
+      height: 250px;
+      background: rgba(180, 200, 255, 0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(100, 150, 200, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      flex-shrink: 0;
+      box-sizing: border-box;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .sentence-div.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .sentence-div:not(.active) {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+
+    .sentence-number {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #38b6ff;
+      margin-bottom: 15px;
+    }
+
+    .sentence-text {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Responsive design for sentences */
+    @media screen and (max-width: 572px) {
+      .entire-body2 {
+        min-width: 400px;
+        height: 110vh;
+        position: relative;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.096);
+        border: 1.5px solid rgba(255,255,255,0.5);
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.12);
+        margin-top: 10px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .sentences-wrapper {
+        width: 350px;
+        height: 220px;
+      }
+      
+      .sentences-track {
+        width: calc(350px * 6);
+      }
+      
+      .sentence-div {
+        width: 350px;
+        height: 220px;
+        padding: 15px;
+      }
+
+      .entire-body2 {
+        min-width: 65px;
+      }
+    }
+
+    @media screen and (max-width: 434px) {
+      .entire-body2 {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .sentences-wrapper {
+        width: 300px;
+        height: 200px;
+      }
+      
+      .sentences-track {
+        width: calc(300px * 6);
+      }
+      
+      .sentence-div {
+        width: 300px;
+        height: 200px;
+        padding: 12px;
+      }
+    }
